@@ -175,5 +175,3 @@ export default function VolunteerSection({ onOpenDonation }) {
     </section>
   );
 }
-  );
-}
