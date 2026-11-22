@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #005134;
+  --primary-container: #176b48;
+  --secondary: #153f30;
+  --tertiary: #006c3f;
+  --accent-sprout: #b7d9a7;
+  --accent-sage: #80b98e;
+  --surface: #ecfef1;
+  --surface-pale: #f6f8f5;
+  --surface-mint: #eaf4eb;
+  --border-subtle: #e6eee8;
+  --text-primary: #101f17;
+  --text-muted: #64746b;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  color: var(--text-primary);
+  background-color: var(--surface);
+  overflow-x: hidden;
+}
+
+/* Material Symbols Outlined Icon helper */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Dynamic Rotating Text Animation (Zero-Jitter Grid Stack) */
+.text-rotator {
+  position: relative;
+  display: inline-grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  vertical-align: bottom;
+  align-items: baseline;
+  text-align: left;
+}
+
+.rotator-item {
+  grid-row: 1;
+  grid-column: 1;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(18px);
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s ease;
+  pointer-events: none;
+}
+
+.rotator-item.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.rotator-item.exit {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-18px);
+}
+
+/* Seamless Infinite Marquee */
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 30s linear infinite;
+  will-change: transform;
+}
+
+.marquee-container:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.gradient-text-sprout {
+  background: linear-gradient(135deg, #b7d9a7 0%, #ffffff 50%, #89ecae 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================================
+   YourSaathi-Inspired About Us & Founder Showcase Animations & Styles
+   ========================================================================== */
+@keyframes aboutGlowPulse {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(0, 81, 52, 0.35), 0 0 45px rgba(183, 217, 167, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(23, 107, 72, 0.5), 0 0 65px rgba(183, 217, 167, 0.4);
+  }
+}
+
+@keyframes aboutFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.about-glow {
+  animation: aboutGlowPulse 4s ease-in-out infinite;
+}
+
+.about-float {
+  animation: aboutFloat 5s ease-in-out infinite;
+}
+
+.about-founder-card {
+  background: linear-gradient(135deg, rgba(16, 31, 23, 0.95) 0%, rgba(21, 63, 48, 0.95) 50%, rgba(13, 38, 28, 0.98) 100%);
+  border: 1px solid rgba(183, 217, 167, 0.35);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.about-stat-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-stat-card:hover {
+  background: rgba(183, 217, 167, 0.15);
+  border-color: rgba(183, 217, 167, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 81, 52, 0.2);
+}
+
+.about-skill-tag {
+  background: linear-gradient(135deg, rgba(0, 81, 52, 0.4), rgba(183, 217, 167, 0.2));
+  border: 1px solid rgba(183, 217, 167, 0.3);
+  transition: all 0.25s ease;
+}
+
+.about-skill-tag:hover {
+  background: linear-gradient(135deg, rgba(0, 81, 52, 0.7), rgba(183, 217, 167, 0.4));
+  border-color: rgba(183, 217, 167, 0.7);
+  transform: scale(1.05);
+  color: #ffffff;
+}
+
+.about-social-btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-social-btn:hover {
+  transform: translateY(-3px) scale(1.06);
+}
+
+.about-profile-ring {
+  background: linear-gradient(135deg, #005134, #b7d9a7, #80b98e, #f59e0b, #005134);
+  background-size: 300% 300%;
+  animation: profileRingRotate 6s ease infinite;
+}
+
+@keyframes profileRingRotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.about-info-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.about-info-card:hover {
+  border-color: rgba(183, 217, 167, 0.4);
+  background: rgba(183, 217, 167, 0.08);
+  transform: translateY(-2px);
+}
+
+.gradient-text-gold {
+  background: linear-gradient(135deg, #fcd34d 0%, #fbbf24 50%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

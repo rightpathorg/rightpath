@@ -1,0 +1,1604 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RightPath NGO | Bridging Hope & Dignity | हर ज़िंदगी को मिले एक नई पहचान</title>
+  <meta name="description" content="RightPath NGO provides grassroots street education, wholesome daily nutrition, free medical health clinics, and vocational livelihoods for underprivileged children and families across Delhi NCR. 100% Tax Deductible under Sec 80G.">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="RightPath NGO - Empowering Children & Communities">
+  <meta property="og:description" content="Dedicated to nurturing identity, providing quality education, and enabling health equity across underserved communities.">
+  <meta property="og:image" content="assets/images/rightpath_logo.png">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/rightpath_logo.png">
+
+  <!-- Google Fonts & Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#005134",
+            "primary-container": "#176b48",
+            "primary-fixed": "#a4f3c7",
+            "primary-fixed-dim": "#88d7ac",
+            "secondary": "#153f30",
+            "secondary-container": "#bdead4",
+            "tertiary": "#006c3f",
+            "accent-sprout": "#b7d9a7",
+            "accent-sage": "#80b98e",
+            "surface": "#ecfef1",
+            "surface-pale": "#f6f8f5",
+            "surface-mint": "#eaf4eb",
+            "surface-container-lowest": "#ffffff",
+            "border-subtle": "#e6eee8",
+            "on-surface": "#101f17",
+            "on-surface-variant": "#3f4942",
+            "text-muted": "#64746b",
+            "inverse-surface": "#25342c"
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          spacing: {
+            "gutter": "1rem",
+            "gutter-desktop": "1.5rem",
+            "margin-desktop": "2rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-2xl": "4rem"
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body class="bg-surface font-sans text-on-surface antialiased selection:bg-accent-sprout selection:text-primary">
+
+  <!-- =========================================================================
+       COOL FLOATING GLASS ISLAND NAVIGATION BAR
+       ========================================================================= -->
+  <header class="fixed top-2 sm:top-3 left-0 right-0 z-50 px-3 sm:px-6 transition-all duration-300">
+    <div class="navbar-island max-w-7xl mx-auto h-[4.5rem] px-3.5 sm:px-6 rounded-2xl sm:rounded-full flex items-center justify-between gap-3 shadow-[0_12px_40px_rgba(0,81,52,0.09)]">
+      
+      <!-- Brand Identity with Glowing Halo -->
+      <a href="#" class="flex items-center gap-3 group focus:outline-none">
+        <div class="relative w-11 h-11 rounded-full p-[2px] bg-gradient-to-tr from-primary via-[#80b98e] to-accent-sprout shadow-sm group-hover:scale-105 group-hover:shadow-[0_0_16px_rgba(183,217,167,0.7)] transition-all duration-300">
+          <img src="assets/images/rightpath_logo.png" alt="RightPath Logo" class="w-full h-full object-cover rounded-full bg-white">
+          <span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center">
+            <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
+          </span>
+        </div>
+        <div class="flex flex-col">
+          <div class="flex items-center gap-1.5">
+            <span class="text-xl sm:text-[22px] font-extrabold text-primary tracking-tight font-sans">RightPath</span>
+            <span class="bg-gradient-to-r from-accent-sprout/40 to-primary/10 text-primary border border-primary/20 text-[10px] font-extrabold px-1.5 py-0.2 rounded-full uppercase tracking-wider flex items-center gap-1">
+              NGO
+            </span>
+          </div>
+          <span class="text-[10px] text-text-muted font-medium -mt-0.5 tracking-tight hidden sm:block">Empowering Lives • Delhi NCR</span>
+        </div>
+      </a>
+
+      <!-- Desktop Floating Pill Tray -->
+      <nav class="hidden lg:flex items-center p-1 bg-surface-pale/80 backdrop-blur-md rounded-full border border-border-subtle/80 shadow-inner gap-0.5 xl:gap-1">
+        <a href="#hero-section" class="nav-pill-btn active px-3.5 py-2 text-xs xl:text-sm rounded-full font-bold text-primary transition-all">
+          Home
+        </a>
+        <button onclick="openAboutUsModal()" type="button" class="nav-pill-btn px-3.5 py-2 text-xs xl:text-sm rounded-full font-semibold text-on-surface-variant hover:text-primary transition-all flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-[15px] text-primary">diversity_1</span>
+          <span>About Us</span>
+        </button>
+        <a href="#initiatives" class="nav-pill-btn px-3.5 py-2 text-xs xl:text-sm rounded-full font-semibold text-on-surface-variant hover:text-primary transition-all flex items-center gap-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary/40"></span>
+          <span>Initiatives</span>
+        </a>
+        <a href="#impact-metrics" class="nav-pill-btn px-3.5 py-2 text-xs xl:text-sm rounded-full font-semibold text-on-surface-variant hover:text-primary transition-all flex items-center gap-1">
+          <span class="material-symbols-outlined text-[15px] text-primary">verified</span>
+          <span>Impact</span>
+        </a>
+        <a href="#stories" class="nav-pill-btn px-3.5 py-2 text-xs xl:text-sm rounded-full font-semibold text-on-surface-variant hover:text-primary transition-all">
+          Stories
+        </a>
+      </nav>
+
+      <!-- Right Action Hub -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Direct WhatsApp icon pill -->
+        <a href="https://wa.me/919711718972?text=Hi%20RightPath%20NGO,%20I%20would%20like%20to%20connect" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-bold text-[#156f34] bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/30 px-3.5 py-2 rounded-full transition-all duration-300 hover:scale-105 shadow-sm" title="Chat on WhatsApp">
+          <svg class="w-3.5 h-3.5 fill-current text-[#25D366]" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          <span>WhatsApp</span>
+        </a>
+
+        <!-- Modern Static Donate Pill -->
+        <button onclick="openDonationModal(1200)" class="relative inline-flex items-center gap-2 bg-gradient-to-r from-primary via-[#155a3d] to-[#005134] text-white text-xs sm:text-sm font-extrabold px-4 sm:px-5 py-2.5 rounded-full shadow-[0_4px_20px_rgba(0,81,52,0.28)] hover:shadow-[0_6px_25px_rgba(0,81,52,0.38)] transition-all duration-300 transform hover:-translate-y-0.5">
+          <span class="material-symbols-outlined text-sm sm:text-base text-accent-sprout" style="font-variation-settings: 'FILL' 1;">favorite</span>
+          <span>Donate Now</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuToggle" class="lg:hidden p-2.5 rounded-full text-primary hover:bg-surface-mint transition-colors focus:outline-none border border-border-subtle" aria-label="Open mobile navigation">
+          <span class="material-symbols-outlined text-2xl">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer Overlay -->
+  <div id="mobileMenuOverlay" class="fixed inset-0 z-[90] bg-black/50 backdrop-blur-sm hidden transition-opacity"></div>
+  
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobileDrawer" class="fixed top-0 right-0 bottom-0 z-[95] w-72 bg-white shadow-2xl p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-in-out">
+    <div>
+      <div class="flex items-center justify-between pb-4 border-b border-border-subtle">
+        <div class="flex items-center gap-2">
+          <img src="assets/images/rightpath_logo.png" alt="RightPath Logo" class="w-8 h-8 rounded-full">
+          <span class="font-bold text-primary text-base">RightPath NGO</span>
+        </div>
+        <button id="closeMobileMenu" class="p-1 rounded-full text-text-muted hover:text-primary">
+          <span class="material-symbols-outlined text-xl">close</span>
+        </button>
+      </div>
+
+      <nav class="flex flex-col gap-2 pt-6">
+        <a href="#hero-section" class="mobile-nav-link px-3 py-2 rounded-lg font-bold text-primary bg-surface-mint">Home</a>
+        <button onclick="openAboutUsModal(); document.getElementById('closeMobileMenu').click();" class="text-left w-full mobile-nav-link px-3 py-2 rounded-lg font-medium text-on-surface-variant hover:bg-surface-mint/60 flex items-center justify-between">
+          <span>About Us</span>
+          <span class="material-symbols-outlined text-sm text-primary">diversity_1</span>
+        </button>
+        <a href="#initiatives" class="mobile-nav-link px-3 py-2 rounded-lg font-medium text-on-surface-variant hover:bg-surface-mint/60">Our Initiatives</a>
+        <a href="#impact-metrics" class="mobile-nav-link px-3 py-2 rounded-lg font-medium text-on-surface-variant hover:bg-surface-mint/60">Verified Impact</a>
+        <a href="#stories" class="mobile-nav-link px-3 py-2 rounded-lg font-medium text-on-surface-variant hover:bg-surface-mint/60">Field Stories</a>
+        <a href="#contact" class="mobile-nav-link px-3 py-2 rounded-lg font-medium text-on-surface-variant hover:bg-surface-mint/60">Contact Us</a>
+      </nav>
+    </div>
+
+    <div class="pt-6 border-t border-border-subtle space-y-3">
+      <button onclick="openDonationModal(1200); document.getElementById('closeMobileMenu').click();" class="w-full py-3 bg-primary text-white rounded-xl font-bold flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">favorite</span>
+        <span>Donate Now (80G Proof)</span>
+      </button>
+      <a href="https://wa.me/919711718972" target="_blank" class="w-full py-2.5 bg-[#25D366]/20 text-[#1e7e34] rounded-xl font-bold text-xs flex items-center justify-center gap-2">
+        <span>Connect on WhatsApp</span>
+      </a>
+    </div>
+  </div>
+
+  <main class="w-full pt-24 sm:pt-28">
+
+    <!-- =======================================================================
+         1. LIVE COMMUNITY DONOR TICKER & MARQUEE REEL (Full Screen Width)
+         ======================================================================= -->
+    <section class="w-full bg-surface-container-lowest border-b border-border-subtle py-2.5 shadow-sm relative z-30 overflow-hidden">
+      <!-- Full-Width Status Bar -->
+      <div class="w-full px-4 sm:px-8 lg:px-12">
+        <div class="flex items-center justify-between gap-3 mb-2">
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center gap-1.5 bg-red-50 text-red-600 px-2.5 py-0.5 rounded-full text-[11px] font-bold tracking-wide">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+              </span>
+              <span>LIVE DONOR REEL</span>
+            </span>
+            <span class="hidden sm:inline-block text-border-subtle">|</span>
+            <span class="hidden sm:inline-flex items-center gap-1 text-xs text-primary font-bold">
+              <span class="material-symbols-outlined text-sm">verified</span>
+              100% Tax Deductible (Sec 80G Certified)
+            </span>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <!-- Social handles from Stitch -->
+            <div class="hidden md:flex items-center gap-1.5 pr-2 border-r border-border-subtle">
+              <a href="https://www.instagram.com/right_path.26?knvt=N2xwb2hhYWVqOGsy&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-6 h-6 rounded-full bg-surface-mint flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-sm">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+              <a href="https://youtube.com/@ashuzx8377?si=XQQUUXwqwEMC10rl" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="w-6 h-6 rounded-full bg-surface-mint flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-sm">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
+              <a href="https://www.facebook.com/share/1NePLPmDPH/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-6 h-6 rounded-full bg-surface-mint flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-sm">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+            </div>
+
+            <p class="hidden sm:block text-xs text-text-muted">
+              <strong class="text-primary font-bold">1,240+ Angels</strong> gave this month
+            </p>
+            <button onclick="openDonationModal(1200)" class="text-xs text-primary hover:underline font-bold inline-flex items-center gap-0.5">
+              <span>Join Reel</span>
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marquee Section with Fixed-Left Static "+ Donate" and Scrolling Reel -->
+      <div class="w-full flex items-center py-1.5 px-4 sm:px-8 lg:px-12 gap-3 sm:gap-4">
+        <!-- Static Fixed-Left Donate Indicator (Does NOT scroll) -->
+        <div class="flex-shrink-0 flex items-center pr-3 sm:pr-4 border-r border-border-subtle z-20 bg-surface-container-lowest">
+          <button onclick="openDonationModal(1200)" class="flex flex-col items-center flex-shrink-0 group cursor-pointer focus:outline-none">
+            <div class="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-primary to-accent-sprout flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-sm animate-pulse-ring">
+              <div class="w-full h-full rounded-full bg-surface-mint flex items-center justify-center text-primary border-2 border-white group-hover:bg-primary group-hover:text-white transition-colors">
+                <span class="material-symbols-outlined text-xl font-bold">add</span>
+              </div>
+              <span class="absolute -bottom-1 -right-0.5 w-4 h-4 rounded-full bg-primary text-white flex items-center justify-center text-[9px] ring-2 ring-white">
+                <span class="material-symbols-outlined text-[10px]">favorite</span>
+              </span>
+            </div>
+            <span class="text-[11px] font-bold text-primary mt-1 text-center truncate group-hover:underline">+ Donate</span>
+          </button>
+        </div>
+
+        <!-- Scrolling Donor Track (Donors Only) -->
+        <div class="marquee-container relative flex-1 min-w-0 overflow-hidden">
+          <div class="marquee-track flex items-center">
+            <!-- Items Pack 1 (Donors Only) -->
+            <div class="flex items-center gap-5 pr-5 flex-shrink-0">
+              <!-- Donor 1 -->
+              <div class="flex flex-col items-center flex-shrink-0 group cursor-pointer transition-all hover:scale-105">
+                <div class="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-[#005134] via-[#80b98e] to-[#b7d9a7] flex items-center justify-center shadow-sm">
+                  <div class="w-full h-full rounded-full overflow-hidden border-2 border-white bg-surface-mint">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2NnH-OTYih1JSAsgDFOd8oXJjr2Lsq8V3ZmJRMXpUX38tBsN4-68MG6pPmE_OoRhyNGHPcF-9AIF08iIEtlYV8WW3cRqxaIQtH2TIhN7cSA43RGuKL1tysE_UsjTJdwaWa1rzjz0XnRnUagIRJKkWMVWwmd_0rgw5v8RDSMfKWjbql_j_xmUThaf4bCyJQ-ZsRSheQ-c9UTSETcJ1lnKXLBp0HwjCkg_w7uClxiU" alt="Aarav Sharma" class="w-full h-full object-cover">
+                  </div>
+                  <span class="absolute -bottom-1 bg-primary text-white font-bold text-[9px] px-1.5 py-0.2 rounded-full ring-2 ring-white shadow-sm">₹2,100</span>
+                </div>
+                <span class="text-[11px] font-bold text-on-surface mt-1 truncate">Aarav S.</span>
+                <span class="text-[9px] text-text-muted truncate">Poshan Drive</span>
+              </div>
+
+              <!-- Donor 2 -->
+              <div class="flex flex-col items-center flex-shrink-0 group cursor-pointer transition-all hover:scale-105">
+                <div class="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-[#005134] via-[#80b98e] to-[#b7d9a7] flex items-center justify-center shadow-sm">
+                  <div class="w-full h-full rounded-full overflow-hidden border-2 border-white bg-surface-mint">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcnucTpy09VSCm-0vHxJ8tjj2d8Dgm1GyHMiZSBtXA7LSSrw_zI-w93sn8fw8VEH-2f4AklTAg7-Y3EoW8Imn_bOPhc4dFMv75q3cz7vOjeeLo1gJg3PDnXIOzK1GUxQrZtZBjZCybVNAO940K-i1kx9ZOAgjEQEuUHwCsd1zk8_hVXT4lkXliW-YDU36OySuPveTtN9xBTegfk9bGZ7KS2qPRfZ77gLpRtoct4lY" alt="Priya Mehta" class="w-full h-full object-cover">
+                  </div>
+                  <span class="absolute -bottom-1 bg-primary text-white font-bold text-[9px] px-1.5 py-0.2 rounded-full ring-2 ring-white shadow-sm">₹5,000</span>
+                </div>
+                <span class="text-[11px] font-bold text-on-surface mt-1 truncate">Priya M.</span>
+                <span class="text-[9px] text-text-muted truncate">Shiksha Kit</span>
+              </div>
+
+              <!-- Donor 3 -->
+              <div class="flex flex-col items-center flex-shrink-0 group cursor-pointer transition-all hover:scale-105">
+                <div class="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-[#005134] via-[#80b98e] to-[#b7d9a7] flex items-center justify-center shadow-sm">
+                  <div class="w-full h-full rounded-full overflow-hidden border-2 border-white bg-surface-mint flex items-center justify-center font-bold text-primary text-xs">
+                    RV
+                  </div>
+                  <span class="absolute -bottom-1 bg-primary text-white font-bold text-[9px] px-1.5 py-0.2 rounded-full ring-2 ring-white shadow-sm">₹1,200</span>
+                </div>
+                <span class="text-[11px] font-bold text-on-surface mt-1 truncate">Rohan V.</span>
+                <span class="text-[9px] text-text-muted truncate">1 Mo Meals</span>
+              </div>
+
+              <!-- Donor 4 -->
+              <div class="flex flex-col items-center flex-shrink-0 group cursor-pointer transition-all hover:scale-105">
+                <div class="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-[#005134] via-[#b7d9a7] to-[#f59e0b] flex items-center justify-center shadow-sm">
+                  <div class="w-full h-full rounded-full overflow-hidden border-2 border-white bg-surface-mint">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoi9xx1Qy7pK9RFCB26Wg4y8y4siEq4OYg_unxfGglaBIzBFY3gHyCIoQLGIDw7GbeoUPQmlDjrkfKqQXBG8zlW3KIZcVnZk5fIEr_4rag8r7HXX9VQnuVxH0ZWeGMkvdcS7sNADtylwBG9aU4Ga32xom3bqyB11dMQvbgyZmpegB505SaJblKNgzq5Ty_KclSNSNUYhvq85akxh0UP-oUUuzOT4OvLgyJWrE8n3g" alt="Kavita Singhal" class="w-full h-full object-cover">
+                  </div>
+                  <span class="absolute -bottom-1 bg-[#005134] text-[#b7d9a7] font-bold text-[9px] px-1.5 py-0.2 rounded-full ring-2 ring-white shadow-sm">₹10,000</span>
+                </div>
+                <span class="text-[11px] font-bold text-on-surface mt-1 truncate">Kavita S.</span>
+                <span class="text-[9px] text-text-muted truncate">Child Sponsor</span>
+              </div>
+
+              <!-- Donor 5 -->
+              <div class="flex flex-col items-center flex-shrink-0 group cursor-pointer transition-all hover:scale-105">
+                <div class="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-[#005134] via-[#80b98e] to-[#b7d9a7] flex items-center justify-center shadow-sm">
+                  <div class="w-full h-full rounded-full overflow-hidden border-2 border-white bg-surface-mint flex items-center justify-center font-bold text-primary text-xs">
+                    VA
+                  </div>
+                  <span class="absolute -bottom-1 bg-primary text-white font-bold text-[9px] px-1.5 py-0.2 rounded-full ring-2 ring-white shadow-sm">₹3,500</span>
+                </div>
+                <span class="text-[11px] font-bold text-on-surface mt-1 truncate">Vikramaditya</span>
+                <span class="text-[9px] text-text-muted truncate">Medical Camp</span>
+              </div>
+
+              <!-- Donor 6 -->
+              <div class="flex flex-col items-center flex-shrink-0 group cursor-pointer transition-all hover:scale-105">
+                <div class="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-[#005134] via-[#80b98e] to-[#b7d9a7] flex items-center justify-center shadow-sm">
+                  <div class="w-full h-full rounded-full overflow-hidden border-2 border-white bg-surface-mint">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5AfSNN1cNK_EeJvUU5HBDgPGtKSlOjgKAe7X_Dpfo0yOmoFkuFjYPZ7oi8AkRRjvpM5aG5ImiGptmsiURyuybkJPIIh7P_k-hjLNMEW0m0sa_yQVLt4b3CeVGswRDmHXtcAXnPbViWRdwcKBJ2aXTrF0Kuktak5HRy8HptpUusljuhqtyvBBR2J9e-zOT_M2YhAkCSZcWyF2zFrUdQpKZwflabG7tT1n6ZhIIO_k" alt="Sneha Gupta" class="w-full h-full object-cover">
+                  </div>
+                  <span class="absolute -bottom-1 bg-primary text-white font-bold text-[9px] px-1.5 py-0.2 rounded-full ring-2 ring-white shadow-sm">₹1,500</span>
+                </div>
+                <span class="text-[11px] font-bold text-on-surface mt-1 truncate">Sneha G.</span>
+                <span class="text-[9px] text-text-muted truncate">Elder Care</span>
+              </div>
+            </div>
+
+            <!-- Items Pack 2 (Duplicate for Seamless Loop - Donors Only) -->
+            <div aria-hidden="true" class="flex items-center gap-5 pr-5 flex-shrink-0">
+              <!-- Donor 1 -->
+              <div class="flex flex-col items-center flex-shrink-0 group cursor-pointer transition-all hover:scale-105">
+                <div class="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-[#005134] via-[#80b98e] to-[#b7d9a7] flex items-center justify-center shadow-sm">
+                  <div class="w-full h-full rounded-full overflow-hidden border-2 border-white bg-surface-mint">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2NnH-OTYih1JSAsgDFOd8oXJjr2Lsq8V3ZmJRMXpUX38tBsN4-68MG6pPmE_OoRhyNGHPcF-9AIF08iIEtlYV8WW3cRqxaIQtH2TIhN7cSA43RGuKL1tysE_UsjTJdwaWa1rzjz0XnRnUagIRJKkWMVWwmd_0rgw5v8RDSMfKWjbql_j_xmUThaf4bCyJQ-ZsRSheQ-c9UTSETcJ1lnKXLBp0HwjCkg_w7uClxiU" alt="Aarav Sharma" class="w-full h-full object-cover">
+                  </div>
+                  <span class="absolute -bottom-1 bg-primary text-white font-bold text-[9px] px-1.5 py-0.2 rounded-full ring-2 ring-white shadow-sm">₹2,100</span>
+                </div>
+                <span class="text-[11px] font-bold text-on-surface mt-1 truncate">Aarav S.</span>
+                <span class="text-[9px] text-text-muted truncate">Poshan Drive</span>
+              </div>
+
+              <!-- Donor 2 -->
+              <div class="flex flex-col items-center flex-shrink-0 group cursor-pointer transition-all hover:scale-105">
+                <div class="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-[#005134] via-[#80b98e] to-[#b7d9a7] flex items-center justify-center shadow-sm">
+                  <div class="w-full h-full rounded-full overflow-hidden border-2 border-white bg-surface-mint">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcnucTpy09VSCm-0vHxJ8tjj2d8Dgm1GyHMiZSBtXA7LSSrw_zI-w93sn8fw8VEH-2f4AklTAg7-Y3EoW8Imn_bOPhc4dFMv75q3cz7vOjeeLo1gJg3PDnXIOzK1GUxQrZtZBjZCybVNAO940K-i1kx9ZOAgjEQEuUHwCsd1zk8_hVXT4lkXliW-YDU36OySuPveTtN9xBTegfk9bGZ7KS2qPRfZ77gLpRtoct4lY" alt="Priya Mehta" class="w-full h-full object-cover">
+                  </div>
+                  <span class="absolute -bottom-1 bg-primary text-white font-bold text-[9px] px-1.5 py-0.2 rounded-full ring-2 ring-white shadow-sm">₹5,000</span>
+                </div>
+                <span class="text-[11px] font-bold text-on-surface mt-1 truncate">Priya M.</span>
+                <span class="text-[9px] text-text-muted truncate">Shiksha Kit</span>
+              </div>
+
+              <!-- Donor 3 -->
+              <div class="flex flex-col items-center flex-shrink-0 group cursor-pointer transition-all hover:scale-105">
+                <div class="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-[#005134] via-[#80b98e] to-[#b7d9a7] flex items-center justify-center shadow-sm">
+                  <div class="w-full h-full rounded-full overflow-hidden border-2 border-white bg-surface-mint flex items-center justify-center font-bold text-primary text-xs">
+                    RV
+                  </div>
+                  <span class="absolute -bottom-1 bg-primary text-white font-bold text-[9px] px-1.5 py-0.2 rounded-full ring-2 ring-white shadow-sm">₹1,200</span>
+                </div>
+                <span class="text-[11px] font-bold text-on-surface mt-1 truncate">Rohan V.</span>
+                <span class="text-[9px] text-text-muted truncate">1 Mo Meals</span>
+              </div>
+
+              <!-- Donor 4 -->
+              <div class="flex flex-col items-center flex-shrink-0 group cursor-pointer transition-all hover:scale-105">
+                <div class="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-[#005134] via-[#b7d9a7] to-[#f59e0b] flex items-center justify-center shadow-sm">
+                  <div class="w-full h-full rounded-full overflow-hidden border-2 border-white bg-surface-mint">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoi9xx1Qy7pK9RFCB26Wg4y8y4siEq4OYg_unxfGglaBIzBFY3gHyCIoQLGIDw7GbeoUPQmlDjrkfKqQXBG8zlW3KIZcVnZk5fIEr_4rag8r7HXX9VQnuVxH0ZWeGMkvdcS7sNADtylwBG9aU4Ga32xom3bqyB11dMQvbgyZmpegB505SaJblKNgzq5Ty_KclSNSNUYhvq85akxh0UP-oUUuzOT4OvLgyJWrE8n3g" alt="Kavita Singhal" class="w-full h-full object-cover">
+                  </div>
+                  <span class="absolute -bottom-1 bg-[#005134] text-[#b7d9a7] font-bold text-[9px] px-1.5 py-0.2 rounded-full ring-2 ring-white shadow-sm">₹10,000</span>
+                </div>
+                <span class="text-[11px] font-bold text-on-surface mt-1 truncate">Kavita S.</span>
+                <span class="text-[9px] text-text-muted truncate">Child Sponsor</span>
+              </div>
+
+              <!-- Donor 5 -->
+              <div class="flex flex-col items-center flex-shrink-0 group cursor-pointer transition-all hover:scale-105">
+                <div class="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-[#005134] via-[#80b98e] to-[#b7d9a7] flex items-center justify-center shadow-sm">
+                  <div class="w-full h-full rounded-full overflow-hidden border-2 border-white bg-surface-mint flex items-center justify-center font-bold text-primary text-xs">
+                    VA
+                  </div>
+                  <span class="absolute -bottom-1 bg-primary text-white font-bold text-[9px] px-1.5 py-0.2 rounded-full ring-2 ring-white shadow-sm">₹3,500</span>
+                </div>
+                <span class="text-[11px] font-bold text-on-surface mt-1 truncate">Vikramaditya</span>
+                <span class="text-[9px] text-text-muted truncate">Medical Camp</span>
+              </div>
+
+              <!-- Donor 6 -->
+              <div class="flex flex-col items-center flex-shrink-0 group cursor-pointer transition-all hover:scale-105">
+                <div class="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-[#005134] via-[#80b98e] to-[#b7d9a7] flex items-center justify-center shadow-sm">
+                  <div class="w-full h-full rounded-full overflow-hidden border-2 border-white bg-surface-mint">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5AfSNN1cNK_EeJvUU5HBDgPGtKSlOjgKAe7X_Dpfo0yOmoFkuFjYPZ7oi8AkRRjvpM5aG5ImiGptmsiURyuybkJPIIh7P_k-hjLNMEW0m0sa_yQVLt4b3CeVGswRDmHXtcAXnPbViWRdwcKBJ2aXTrF0Kuktak5HRy8HptpUusljuhqtyvBBR2J9e-zOT_M2YhAkCSZcWyF2zFrUdQpKZwflabG7tT1n6ZhIIO_k" alt="Sneha Gupta" class="w-full h-full object-cover">
+                  </div>
+                  <span class="absolute -bottom-1 bg-primary text-white font-bold text-[9px] px-1.5 py-0.2 rounded-full ring-2 ring-white shadow-sm">₹1,500</span>
+                </div>
+                <span class="text-[11px] font-bold text-on-surface mt-1 truncate">Sneha G.</span>
+                <span class="text-[9px] text-text-muted truncate">Elder Care</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =======================================================================
+         2. DYNAMIC HERO SECTION (With Cool Particles, Rotating Text, 3D Tilt)
+         ======================================================================= -->
+    <section id="hero-section" class="w-full bg-[#133829] text-white py-14 lg:py-20 relative overflow-hidden">
+      
+      <!-- Interactive Hope Particles Canvas -->
+      <canvas id="hero-particles-canvas"></canvas>
+
+      <!-- Ambient Botanical Glow Auras -->
+      <div class="hero-aura-drift absolute -top-24 -left-20 w-[36rem] h-[36rem] rounded-full bg-radial from-accent-sprout/20 via-primary/10 to-transparent blur-3xl pointer-events-none"></div>
+      <div class="hero-aura-drift absolute top-1/3 -right-20 w-[32rem] h-[32rem] rounded-full bg-radial from-[#80b98e]/25 via-[#005134]/20 to-transparent blur-3xl pointer-events-none" style="animation-delay: -5s;"></div>
+
+      <!-- Floating Animated SVG Leaves -->
+      <div class="absolute top-16 left-[6%] text-accent-sprout opacity-25 animate-float-slow pointer-events-none hidden md:block">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/>
+        </svg>
+      </div>
+      <div class="absolute bottom-20 left-[45%] text-primary-fixed opacity-20 animate-float-reverse pointer-events-none hidden md:block">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.5 2 2 6.5 2 12c0 3.8 2.1 7.1 5.2 8.8l-.8 1.4 1.7.9.8-1.5c1 .3 2.1.4 3.1.4 5.5 0 10-4.5 10-10S17.5 2 12 2zm1 14.5c-.8.8-1.9 1.3-3 1.4V16c1.1-.1 2.1-.6 2.8-1.3l.2-.2zm-3-4.5c1.4 0 2.7.5 3.7 1.5l-1.4 1.4c-.6-.6-1.4-.9-2.3-.9v-2zm3-3c2.2 0 4.2.9 5.7 2.3l-1.4 1.4C13.2 8.7 11.7 8 10 8V6c1 0 2 .2 3 .5z"/>
+        </svg>
+      </div>
+
+      <div class="max-w-[72rem] mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          
+          <!-- Left Column: Dynamic Hero Typography & Quick Giving Selector -->
+          <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
+            
+            <!-- Trust Badge Pill -->
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-3.5 py-1 rounded-full shadow-sm">
+              <span class="w-2.5 h-2.5 rounded-full bg-accent-sprout animate-pulse"></span>
+              <span class="text-xs uppercase font-extrabold tracking-wider text-accent-sprout">Every Journey Deserves The Right Path</span>
+            </div>
+
+            <!-- Dynamic Animated Headline with Word Switcher -->
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight leading-[1.18] text-white">
+              हर ज़िंदगी को मिले <br class="hidden sm:inline">
+              <span class="text-rotator inline-block">
+                <span class="rotator-item active gradient-text-sprout">एक नई पहचान।</span>
+                <span class="rotator-item gradient-text-gold">गुणवत्तापूर्ण शिक्षा।</span>
+                <span class="rotator-item gradient-text-sprout">सम्मान और स्वावलंबन।</span>
+                <span class="rotator-item gradient-text-gold">The Right Path in Life.</span>
+              </span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-[#d3e7da] max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
+              <strong class="text-white font-semibold">RightPath NGO</strong> bridges the opportunity divide through grassroots street schools, wholesome daily nutrition, preventive health clinics, and dignified vocational training for marginalized children and families.
+            </p>
+
+            <!-- Interactive Quick Giving Tier Buttons (Dynamic Selector) -->
+            <div class="pt-2">
+              <span class="block text-xs uppercase tracking-wider text-[#a4d0bb] font-bold mb-2">Select Your Monthly Impact Tier:</span>
+              <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2">
+                <button type="button" data-amount="500" data-impact="1 Child School Kit" class="hero-giving-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/10 text-[#d3e7da] hover:bg-white/20 transition-all">
+                  ₹500 <span class="text-[10px] opacity-80">(Kit)</span>
+                </button>
+                <button type="button" data-amount="1200" data-impact="10 Children Meals" class="hero-giving-pill px-3 py-1.5 rounded-lg text-xs font-bold bg-accent-sprout text-primary ring-2 ring-white shadow-sm transition-all">
+                  ₹1,200 <span class="text-[10px] opacity-90">(Meals ⭐)</span>
+                </button>
+                <button type="button" data-amount="3000" data-impact="Women Tailoring Kit" class="hero-giving-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/10 text-[#d3e7da] hover:bg-white/20 transition-all">
+                  ₹3,000 <span class="text-[10px] opacity-80">(Skills)</span>
+                </button>
+                <button type="button" data-amount="5000" data-impact="Full Semester Sponsor" class="hero-giving-pill px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/10 text-[#d3e7da] hover:bg-white/20 transition-all">
+                  ₹5,000 <span class="text-[10px] opacity-80">(Semester)</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Dynamic Action CTAs -->
+            <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4">
+              <button id="heroDynamicDonateBtn" class="inline-flex items-center gap-2.5 bg-accent-sprout hover:bg-white text-primary font-bold text-sm sm:text-base px-6 py-3.5 rounded-xl transition-all shadow-lg hover:shadow-accent-sprout/20 transform hover:-translate-y-0.5">
+                <span class="material-symbols-outlined text-xl text-primary animate-bounce" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                <span id="heroDynamicDonateBtnText">Donate ₹1,200 (Feeds 10 Children)</span>
+              </button>
+
+              <a href="#initiatives" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/25 font-bold text-sm sm:text-base px-5 py-3.5 rounded-xl transition-colors">
+                <span>Explore Initiatives</span>
+                <span class="material-symbols-outlined text-base">arrow_forward</span>
+              </a>
+            </div>
+
+            <!-- Quick Metrics Counter Ribbon (Animated on View) -->
+            <div class="pt-6 grid grid-cols-3 gap-3 border-t border-white/15">
+              <div class="bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-white/10 text-center lg:text-left">
+                <span class="animate-counter block text-2xl sm:text-3xl font-extrabold text-accent-sprout leading-tight" data-target="15400" data-suffix="+">0</span>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-[#b2d5bf]">Lives Touched</span>
+              </div>
+              <div class="bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-white/10 text-center lg:text-left">
+                <span class="animate-counter block text-2xl sm:text-3xl font-extrabold text-accent-sprout leading-tight" data-target="45000" data-suffix="+">0</span>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-[#b2d5bf]">Meals Served</span>
+              </div>
+              <div class="bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-white/10 text-center lg:text-left">
+                <span class="animate-counter block text-2xl sm:text-3xl font-extrabold text-accent-sprout leading-tight" data-target="180" data-suffix="+">0</span>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-[#b2d5bf]">Mentors</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Interactive 3D Perspective Tilt Card with 4-Tab Spotlight -->
+          <div class="lg:col-span-5 relative perspective-container flex justify-center" id="heroTiltContainer">
+            <div class="w-full max-w-md lg:max-w-none relative">
+              
+              <!-- Focus Area Switcher Tabs -->
+              <div class="flex items-center justify-between gap-1 mb-3 bg-black/20 p-1 rounded-xl backdrop-blur-md border border-white/10 overflow-x-auto">
+                <button type="button" data-index="0" class="hero-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-accent-sprout text-primary shadow-sm transition-all flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-sm">school</span>
+                  <span>Schools</span>
+                </button>
+                <button type="button" data-index="1" class="hero-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-[#b2d5bf] hover:text-white hover:bg-white/10 transition-all flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-sm">restaurant</span>
+                  <span>Meals</span>
+                </button>
+                <button type="button" data-index="2" class="hero-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-[#b2d5bf] hover:text-white hover:bg-white/10 transition-all flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-sm">medical_services</span>
+                  <span>Health</span>
+                </button>
+                <button type="button" data-index="3" class="hero-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-[#b2d5bf] hover:text-white hover:bg-white/10 transition-all flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-sm">work</span>
+                  <span>Skills</span>
+                </button>
+              </div>
+
+              <!-- The Tilt Card Container -->
+              <div id="heroTiltCard" class="tilt-card relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 bg-surface-variant aspect-[4/5] w-full group">
+                
+                <!-- Spotlight Photo -->
+                <img id="heroSpotlightImage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnmUnBsy4LK2JxTMZ_btgjtCcMGSO_nLDFZDcJZzX0REVJG5I08M82PDpXL_wv3bxHhT_V4xbJOlCkIUxFM8_hDlhSV45IgP0fEFBqrD47vUo7DL0lNGjTnCQK1l_6ECCJMbEAm8JZXvCLHT5P5Fm5PDKjbvntrz90I8rlaZ9Gpejj5e2aeQPj_90n92eYeR68CSCxDOUP-vBbf5y503AYkiL3NShHPulQ0FuiLaM" alt="RightPath Classroom in Action" class="w-full h-full object-cover transition-opacity duration-300">
+                
+                <!-- Gradient Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0e2c21] via-black/20 to-transparent"></div>
+
+                <!-- Top Left Floating Badge -->
+                <div class="tilt-badge absolute top-3 left-3 bg-[#005134]/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1.5 rounded-full border border-accent-sprout/40 shadow-lg flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-sm text-accent-sprout">verified</span>
+                  <span>100% Grassroots Efficacy</span>
+                </div>
+
+                <!-- Top Right Live Beacon -->
+                <div class="tilt-badge absolute top-3 right-3 bg-red-600/90 backdrop-blur-md text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-lg flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+                  <span id="heroSpotlightTag">Active Today: 8 Centers</span>
+                </div>
+
+                <!-- Bottom Glassmorphism Info Panel -->
+                <div class="tilt-inner absolute bottom-4 left-4 right-4 bg-[#102f24]/90 backdrop-blur-md p-4 rounded-xl border border-white/20 flex items-center gap-3.5 shadow-xl">
+                  <div class="w-11 h-11 rounded-xl bg-accent-sprout/20 border border-accent-sprout/30 flex items-center justify-center text-accent-sprout flex-shrink-0">
+                    <span id="heroSpotlightIcon" class="material-symbols-outlined text-2xl">school</span>
+                  </div>
+                  <div>
+                    <h3 id="heroSpotlightTitle" class="text-sm sm:text-base font-bold text-white leading-tight">Street School Centers (शिक्षा)</h3>
+                    <p id="heroSpotlightDesc" class="text-xs text-[#b8dfc4] mt-0.5 line-clamp-2">Daily academic classes & digital labs across Delhi-NCR slums</p>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =======================================================================
+         4. CORE INITIATIVES & GROUND PROGRAMS (With Category Filtering)
+         ======================================================================= -->
+    <section id="initiatives" class="w-full py-16 lg:py-24 bg-surface-pale relative">
+      <div class="max-w-[72rem] mx-auto px-4 sm:px-6 md:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+          <div>
+            <div class="inline-flex items-center gap-2 bg-surface-mint px-3 py-1 rounded-full text-primary mb-2">
+              <span class="material-symbols-outlined text-sm">hub</span>
+              <span class="text-xs font-bold uppercase tracking-wider">Ground Operations</span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-on-surface tracking-tight">
+              Our Core Initiatives & Action Pillars
+            </h2>
+            <p class="text-sm text-on-surface-variant max-w-xl mt-1">
+              A comprehensive lifecycle approach addressing holistic growth from formative childhood education to elderly compassionate healthcare.
+            </p>
+          </div>
+
+          <!-- Category Filter Tabs -->
+          <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0">
+            <button type="button" data-filter="all" class="initiative-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-bold bg-primary text-white shadow-sm transition-all">All (6)</button>
+            <button type="button" data-filter="education" class="initiative-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold text-text-muted hover:text-primary transition-all">Education</button>
+            <button type="button" data-filter="health-meals" class="initiative-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold text-text-muted hover:text-primary transition-all">Nutrition & Health</button>
+            <button type="button" data-filter="livelihoods" class="initiative-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold text-text-muted hover:text-primary transition-all">Livelihoods & Care</button>
+          </div>
+        </div>
+
+        <!-- 6 Program Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Program 1: Shiksha Abhiyan -->
+          <article data-category="education" class="initiative-card bg-white rounded-2xl border border-border-subtle overflow-hidden flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
+            <div>
+              <div class="relative h-48 bg-surface-mint overflow-hidden">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6y6wrEUvUzycGNHRGWgrGzx956jVNJhocB0Sh23L85wX_NnoGKxYl96dqgRZLfsZZ-BeOB5SxawqiojgnszMq_yrKv8UpcipaEusk2sYTBMUw6Jtz4LtlZQ5rYr3X99K5Ju0jmGP0iX3uSL2ZpheGq-R9OKfhUEwj9nmowdmwuRvaEQkn6gDNCxpOVYEhmtQE9NsGLO3q3SstMQI22pHpfxDslxwq_BW_5Pq-lAM" alt="Shiksha Abhiyan Street Classrooms" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-3 left-3 bg-[#153f30] text-accent-sprout text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Education</span>
+              </div>
+              <div class="p-5 space-y-2">
+                <h3 class="text-base sm:text-lg font-bold text-on-surface">1. Shiksha Abhiyan (शिक्षा अभियान)</h3>
+                <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                  Daily foundational literacy, numeracy, and digital labs targeting first-generation street learners in slum clusters.
+                </p>
+                <div class="pt-2 space-y-1">
+                  <div class="flex justify-between text-xs">
+                    <span class="text-text-muted">Target: 5,000 Kids</span>
+                    <span class="text-primary font-bold">78% Achieved</span>
+                  </div>
+                  <div class="w-full h-2 bg-surface-mint rounded-full overflow-hidden">
+                    <div class="h-full bg-primary rounded-full transition-all duration-1000" style="width: 78%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-5 pt-0">
+              <button onclick="selectCausePreset('Shiksha Abhiyan - Education', 500)" class="w-full inline-flex items-center justify-center gap-2 bg-surface-mint hover:bg-primary text-primary hover:text-white text-xs sm:text-sm font-bold py-2.5 rounded-xl transition-all">
+                <span>Sponsor a Student (₹500/mo)</span>
+                <span class="material-symbols-outlined text-sm">favorite</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Program 2: Poshan Sahayata -->
+          <article data-category="health-meals" class="initiative-card bg-white rounded-2xl border border-border-subtle overflow-hidden flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
+            <div>
+              <div class="relative h-48 bg-surface-mint overflow-hidden">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXObVM1hJ_4mLledVWvVMwHMgsPnuirGwDeA-_VYb4cg85u7FEqBmkibF8vXJMQXgovucR9oRvSRZnUTHIwV41ROsuja9Z2ipWLA-Jz8Q8FgJzsR4-Sl83mOoA9xlHnACptIFusT4dhuHY43N0R-QPjAxZBgHaF9ZZaVMX_SKDNBnb-gIJ8jlBUge0_X7hII2TcDTWC1C8AcJZE48xrxws0TFBsUEcxjL_URbodUk" alt="Poshan Sahayata Mid-Day Meals" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-3 left-3 bg-[#153f30] text-accent-sprout text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Nutrition</span>
+              </div>
+              <div class="p-5 space-y-2">
+                <h3 class="text-base sm:text-lg font-bold text-on-surface">2. Poshan Sahayata (भोजन सहायता)</h3>
+                <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                  Clean, balanced warm mid-day meals and vitamin supplements preventing child malnutrition and micro-deficiencies.
+                </p>
+                <div class="pt-2 space-y-1">
+                  <div class="flex justify-between text-xs">
+                    <span class="text-text-muted">Target: 4,000 Meals</span>
+                    <span class="text-primary font-bold">92% Achieved</span>
+                  </div>
+                  <div class="w-full h-2 bg-surface-mint rounded-full overflow-hidden">
+                    <div class="h-full bg-primary rounded-full transition-all duration-1000" style="width: 92%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-5 pt-0">
+              <button onclick="selectCausePreset('Poshan Sahayata - Meals', 1200)" class="w-full inline-flex items-center justify-center gap-2 bg-surface-mint hover:bg-primary text-primary hover:text-white text-xs sm:text-sm font-bold py-2.5 rounded-xl transition-all">
+                <span>Feed 10 Kids (₹1,200)</span>
+                <span class="material-symbols-outlined text-sm">restaurant</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Program 3: Arogya Seva -->
+          <article data-category="health-meals" class="initiative-card bg-white rounded-2xl border border-border-subtle overflow-hidden flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
+            <div>
+              <div class="relative h-48 bg-surface-mint overflow-hidden">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAODBNY1hNK-ngOgs12vdD_Uta5mtvuQr07pgMB7S1EXtOSBr_NheCgo_fN7WV8D89XN7vzXyaLmVoLIztgDPmM5Gr7INeNVJSuGoy5ybU98JtWfnvQPUAagtvqC4y23nLuYAkv37CyrfAwDkOBogCM6-H-IEe_St_L0oo9u6zjFimW18fRukI5NTWPxIZLdkMpo0yLCYIQn_YEaG6gwLoCnwCoTBrvqZEv1GnkGQE" alt="Arogya Seva Medical Camps" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-3 left-3 bg-[#153f30] text-accent-sprout text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Healthcare</span>
+              </div>
+              <div class="p-5 space-y-2">
+                <h3 class="text-base sm:text-lg font-bold text-on-surface">3. Arogya Seva (स्वास्थ्य सेवा)</h3>
+                <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                  Fortnightly mobile health checks, routine immunization drives, and adolescent menstrual hygiene kit distribution.
+                </p>
+                <div class="pt-2 space-y-1">
+                  <div class="flex justify-between text-xs">
+                    <span class="text-text-muted">Target: 24 Camps/Qtr</span>
+                    <span class="text-primary font-bold">65% Achieved</span>
+                  </div>
+                  <div class="w-full h-2 bg-surface-mint rounded-full overflow-hidden">
+                    <div class="h-full bg-primary rounded-full transition-all duration-1000" style="width: 65%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-5 pt-0">
+              <button onclick="selectCausePreset('Arogya Swasthya Seva', 850)" class="w-full inline-flex items-center justify-center gap-2 bg-surface-mint hover:bg-primary text-primary hover:text-white text-xs sm:text-sm font-bold py-2.5 rounded-xl transition-all">
+                <span>Medical Kit (₹850)</span>
+                <span class="material-symbols-outlined text-sm">medical_services</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Program 4: Kaushal Vikas -->
+          <article data-category="livelihoods" class="initiative-card bg-white rounded-2xl border border-border-subtle overflow-hidden flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
+            <div>
+              <div class="relative h-48 bg-surface-mint overflow-hidden">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrWLMz2kRyTIqpM4RPgAWKY6xnWuxaUuGr37btzyjO7rX1mPZxpwfPsS5T9qo8VUDIxRbgDqGRZDeAZjwAH2imEBYpbNRwsNjnVbqTBbHBNfih7ngohyjirHVn-PnJHnjCujQTfBZwgf3I9FoogZb5dykytiWkuwQsmiUtzJGAGBCcPfLf2HBlKrC3j0RPBmZ-wueiRXjzFoCf97Vo4FnbLBTTfsvvWQWN9KiCCy8" alt="Kaushal Vikas Women Empowerment" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-3 left-3 bg-[#153f30] text-accent-sprout text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Livelihoods</span>
+              </div>
+              <div class="p-5 space-y-2">
+                <h3 class="text-base sm:text-lg font-bold text-on-surface">4. Kaushal Vikas (कौशल विकास)</h3>
+                <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                  Vocational tailoring, basic IT courses, and handicraft artisan training enabling mothers to earn financial independence.
+                </p>
+                <div class="pt-2 space-y-1">
+                  <div class="flex justify-between text-xs">
+                    <span class="text-text-muted">Target: 300 Graduates</span>
+                    <span class="text-primary font-bold">84% Achieved</span>
+                  </div>
+                  <div class="w-full h-2 bg-surface-mint rounded-full overflow-hidden">
+                    <div class="h-full bg-primary rounded-full transition-all duration-1000" style="width: 84%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-5 pt-0">
+              <button onclick="selectCausePreset('Kaushal Vikas - Women Livelihoods', 3000)" class="w-full inline-flex items-center justify-center gap-2 bg-surface-mint hover:bg-primary text-primary hover:text-white text-xs sm:text-sm font-bold py-2.5 rounded-xl transition-all">
+                <span>Empower a Woman (₹3,000)</span>
+                <span class="material-symbols-outlined text-sm">work</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Program 5: Vriddha Care -->
+          <article data-category="livelihoods" class="initiative-card bg-white rounded-2xl border border-border-subtle overflow-hidden flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
+            <div>
+              <div class="relative h-48 bg-surface-mint overflow-hidden">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr6Im1Zk_n_y9kD9carjLtryUmvZPaGAhNsYRF2HZlmkV3_0_B6BsEqbCgPgdzwnkqI2Z8rHo4Na6aKwUtmy3p93hBL83ib1aW53_S-TmgvXp1sDL4SBnr0jnz1Hn_iiHzBaWghTqd9yWF5P9rTfwdNVce1qxwz_1wdvADS5wSYZ5wdOjmLIEhFBjHDhLeevKJs9yBu2IKvmvqLaa3-xqatjR4aoaRpnqxMgkzGuY" alt="Vriddha Care Senior Support" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-3 left-3 bg-[#153f30] text-accent-sprout text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Elder Care</span>
+              </div>
+              <div class="p-5 space-y-2">
+                <h3 class="text-base sm:text-lg font-bold text-on-surface">5. Vriddha Care (बुजुर्गों की सेवा)</h3>
+                <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                  Emotional companionship, free chronic medicine supplies, and assistive mobility equipment for abandoned senior citizens.
+                </p>
+                <div class="pt-2 space-y-1">
+                  <div class="flex justify-between text-xs">
+                    <span class="text-text-muted">Target: 250 Elders</span>
+                    <span class="text-primary font-bold">70% Achieved</span>
+                  </div>
+                  <div class="w-full h-2 bg-surface-mint rounded-full overflow-hidden">
+                    <div class="h-full bg-primary rounded-full transition-all duration-1000" style="width: 70%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-5 pt-0">
+              <button onclick="selectCausePreset('Vriddha Care - Elders', 1500)" class="w-full inline-flex items-center justify-center gap-2 bg-surface-mint hover:bg-primary text-primary hover:text-white text-xs sm:text-sm font-bold py-2.5 rounded-xl transition-all">
+                <span>Elder Medicine Pack (₹1,500)</span>
+                <span class="material-symbols-outlined text-sm">elderly</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Program 6: Harit Pahal -->
+          <article data-category="livelihoods" class="initiative-card bg-white rounded-2xl border border-border-subtle overflow-hidden flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
+            <div>
+              <div class="relative h-48 bg-surface-mint overflow-hidden">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa1x5UGjmu7bv5R9-ML3R2CBMxVrWfPa5biaSLp-wzbCkBZ37D3c5VPWQvNMz2J-9paEGpcXQmknx0UWYuCukP3IvLP5sCoqiiDmhkG7og1mh2_zYHFmpDSEqOuQcyys_dkUUkl8VghbaQdl0HJhbz_jojJI4aDcHS54WMZvzrkjbT-QjScRtb5ezq3FcDsh6w8l3ArDrOtDk6ZL--ftjDe_z_4oU2aupRjxrKwEA" alt="Harit Pahal Eco Drives" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <span class="absolute top-3 left-3 bg-[#153f30] text-accent-sprout text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Environment</span>
+              </div>
+              <div class="p-5 space-y-2">
+                <h3 class="text-base sm:text-lg font-bold text-on-surface">6. Harit Pahal (पर्यावरण व स्वच्छता)</h3>
+                <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                  Community tree plantations, localized waste segregation awareness, and water sanitation filters in dense bastis.
+                </p>
+                <div class="pt-2 space-y-1">
+                  <div class="flex justify-between text-xs">
+                    <span class="text-text-muted">Target: 2,000 Saplings</span>
+                    <span class="text-primary font-bold">90% Achieved</span>
+                  </div>
+                  <div class="w-full h-2 bg-surface-mint rounded-full overflow-hidden">
+                    <div class="h-full bg-primary rounded-full transition-all duration-1000" style="width: 90%;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-5 pt-0">
+              <button onclick="selectCausePreset('Harit Pahal - Green Drive', 600)" class="w-full inline-flex items-center justify-center gap-2 bg-surface-mint hover:bg-primary text-primary hover:text-white text-xs sm:text-sm font-bold py-2.5 rounded-xl transition-all">
+                <span>Plant 5 Trees (₹600)</span>
+                <span class="material-symbols-outlined text-sm">nature</span>
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================================
+         6. VERIFIED IMPACT NUMBERS (Signature Data Display)
+         ======================================================================= -->
+    <section id="impact-metrics" class="w-full py-16 lg:py-24 bg-surface">
+      <div class="max-w-[72rem] mx-auto px-4 sm:px-6 md:px-8">
+        
+        <div class="bg-white p-6 sm:p-10 rounded-3xl border border-border-subtle shadow-sm">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <div class="border-l-4 border-accent-sage pl-4">
+              <span class="animate-counter block text-3xl sm:text-4xl font-extrabold text-primary leading-none" data-target="15400" data-suffix="+">0</span>
+              <span class="text-xs font-bold uppercase tracking-wider text-text-muted block mt-2">Lives Directly Touched</span>
+              <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Across 12 low-income basti clusters in Delhi NCR.</p>
+            </div>
+
+            <div class="border-l-4 border-accent-sage pl-4">
+              <span class="animate-counter block text-3xl sm:text-4xl font-extrabold text-primary leading-none" data-target="180" data-suffix="+">0</span>
+              <span class="text-xs font-bold uppercase tracking-wider text-text-muted block mt-2">Active Field Mentors</span>
+              <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">College scholars, educators, doctors & professionals.</p>
+            </div>
+
+            <div class="border-l-4 border-accent-sage pl-4">
+              <span class="block text-3xl sm:text-4xl font-extrabold text-primary leading-none">100%</span>
+              <span class="text-xs font-bold uppercase tracking-wider text-text-muted block mt-2">Direct Fund Allocation</span>
+              <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Admin costs sponsored separately by trustees.</p>
+            </div>
+
+            <div class="border-l-4 border-accent-sage pl-4">
+              <span class="block text-3xl sm:text-4xl font-extrabold text-primary leading-none">80G</span>
+              <span class="text-xs font-bold uppercase tracking-wider text-text-muted block mt-2">Tax Exemption Certified</span>
+              <p class="text-xs text-on-surface-variant mt-1 leading-relaxed">Immediate receipt with government IT-UIN verification.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================================
+         7. REAL STORIES OF CHANGE (Field Testimonials)
+         ======================================================================= -->
+    <section id="stories" class="w-full py-16 lg:py-24 bg-[#133829] text-white relative">
+      <div class="max-w-[72rem] mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-xs uppercase font-extrabold tracking-widest text-accent-sprout">Authentic Ground Voices</span>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white mt-1">हर मदद के पीछे एक सच्ची कहानी</h2>
+          <p class="text-sm text-[#d3e7da] mt-1">
+            Witness the transformation ignited when compassion meets consistent grassroots companionship.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <!-- Story 1: Aarti -->
+          <div class="bg-white/10 border border-white/15 p-6 rounded-2xl backdrop-blur-sm flex flex-col sm:flex-row gap-5 items-start hover:bg-white/15 transition-all">
+            <div class="w-24 h-24 rounded-2xl overflow-hidden flex-shrink-0 border-2 border-accent-sprout/40 shadow-md">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA53L41VmCnbxr-Ar_vCGGbX1K7KDsvf907kldNHDfTHzsdW8Fb0ps9VHs_5_E95OGzfmHlkLOuO1spl8xtrnA8P_9GlDuKQZw21qKk8MYcoI03qfrQQRg6t0goeIXSBzqLYQIl6QdmX_LXTOUNXX4S-P1Y29oYls4MMit_DoXY_BlD9qBnbYFQ7RwU6LNwddlfPi2kiol3Ik9qkF6PNE-DVY0Gdgk3t_7Uqq5DHwM" alt="Aarti Kumari" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="text-accent-sprout material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="text-xs font-bold uppercase tracking-wider text-accent-sprout">Formal School Enrollment</span>
+              </div>
+              <p class="text-xs sm:text-sm italic text-[#e6f4eb] leading-relaxed">
+                “I used to collect scrap with my mother near the bridge. RightPath didis taught me to read alphabets. Today, I passed my government school entrance exam for Grade 5!”
+              </p>
+              <div>
+                <p class="text-sm font-bold text-white">Aarti Kumari (Age 11)</p>
+                <p class="text-xs text-[#a8d3b7]">Yamuna Khadar Learning Center</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story 2: Sunita Devi -->
+          <div class="bg-white/10 border border-white/15 p-6 rounded-2xl backdrop-blur-sm flex flex-col sm:flex-row gap-5 items-start hover:bg-white/15 transition-all">
+            <div class="w-24 h-24 rounded-2xl overflow-hidden flex-shrink-0 border-2 border-accent-sprout/40 shadow-md">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJtBdzAENy8GVTE3ZPWr6gnPHGdC4h27IWVIdB5269Vb5NB-leqr7uSIEkwUVOYfwoMyw9QA0emTN3L8PulxRE26jllO5JBSzTnrO581n854dOW79dG1QAGbQPCgRk1XlARp8h99QI0Pk59s42DrKigTU0snkVE6HDG87IVabKdXFiAkOWnEYMYwWs_OO0eZjBjXggmxxOwPISXDq6IexwE3ETwalk9xB424poUVE" alt="Sunita Devi" class="w-full h-full object-cover">
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center gap-2">
+                <span class="text-accent-sprout material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="text-xs font-bold uppercase tracking-wider text-accent-sprout">Micro-Entrepreneurship</span>
+              </div>
+              <p class="text-xs sm:text-sm italic text-[#e6f4eb] leading-relaxed">
+                “With the 6-month tailoring course and a sewing machine kit from RightPath, I now stitch uniforms for the community. I earn ₹7,500 every month to support my three children.”
+              </p>
+              <div>
+                <p class="text-sm font-bold text-white">Sunita Devi (Mother of 3)</p>
+                <p class="text-xs text-[#a8d3b7]">Kaushal Vikas Center, Rohini</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================================
+         8. FAST IN-PAGE DIRECT GIVING & IMPACT ASSURANCE
+         ======================================================================= -->
+    <section id="donate" class="w-full py-16 lg:py-24 bg-surface">
+      <div class="max-w-[72rem] mx-auto px-4 sm:px-6 md:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <!-- Left: In-Page Fast Giving Engine -->
+          <div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-3xl border border-border-subtle shadow-md">
+            <div class="flex items-center justify-between pb-4 mb-4 border-b border-border-subtle">
+              <div>
+                <span class="text-xs uppercase font-extrabold tracking-wider text-primary">Direct Fast Giving</span>
+                <h3 class="text-xl sm:text-2xl font-bold text-on-surface">Support a Child’s Journey</h3>
+              </div>
+              <div class="flex items-center gap-1 text-primary bg-surface-mint px-2.5 py-1 rounded-lg text-xs font-bold">
+                <span class="material-symbols-outlined text-sm">lock</span>
+                <span>256-Bit SSL</span>
+              </div>
+            </div>
+
+            <form id="donationForm" class="space-y-4">
+              <!-- Select Cause -->
+              <div>
+                <label class="block text-xs font-bold text-on-surface mb-1">Select Program</label>
+                <select id="selectedCause" class="w-full bg-surface-pale border border-border-subtle rounded-xl px-4 py-2.5 text-sm text-on-surface focus:outline-none focus:border-primary font-medium">
+                  <option value="Shiksha Abhiyan - Child Education">Shiksha Abhiyan (Child Education & Digital Lab)</option>
+                  <option value="Poshan & Bhojan Sahayata">Poshan Sahayata (Nutritious Hot Meals)</option>
+                  <option value="Arogya Swasthya Seva">Arogya Swasthya Seva (Medical & Clinics)</option>
+                  <option value="Kaushal Vikas - Women Livelihoods">Kaushal Vikas (Women Skill Centers)</option>
+                  <option value="General Corpus - Where Needed Most" selected>General Corpus Fund (Where Most Urgently Needed)</option>
+                </select>
+              </div>
+
+              <!-- Amount Preset Grid -->
+              <div>
+                <label class="block text-xs font-bold text-on-surface mb-1.5">Contribution Amount (INR)</label>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                  <button type="button" onclick="setDonationAmount(500)" class="page-amt-btn py-3 px-3 rounded-lg border border-border-subtle text-center font-bold text-on-surface hover:border-primary transition-all bg-surface-pale">
+                    ₹500
+                    <span class="block text-[10px] text-text-muted font-normal mt-0.5">School Kit</span>
+                  </button>
+                  <button type="button" onclick="setDonationAmount(1200)" class="page-amt-btn py-3 px-3 rounded-lg border-2 border-primary bg-surface-mint text-center font-bold text-primary transition-all shadow-sm">
+                    ₹1,200
+                    <span class="block text-[10px] text-primary font-semibold mt-0.5">1 Mo Meals</span>
+                  </button>
+                  <button type="button" onclick="setDonationAmount(3000)" class="page-amt-btn py-3 px-3 rounded-lg border border-border-subtle text-center font-bold text-on-surface hover:border-primary transition-all bg-surface-pale">
+                    ₹3,000
+                    <span class="block text-[10px] text-text-muted font-normal mt-0.5">Tailoring Kit</span>
+                  </button>
+                  <button type="button" onclick="setDonationAmount(5000)" class="page-amt-btn py-3 px-3 rounded-lg border border-border-subtle text-center font-bold text-on-surface hover:border-primary transition-all bg-surface-pale">
+                    ₹5,000
+                    <span class="block text-[10px] text-text-muted font-normal mt-0.5">Semester</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Custom Amount & PAN -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div>
+                  <label class="block text-xs font-bold text-on-surface mb-1">Custom Amount (₹)</label>
+                  <input id="customAmountInput" type="number" min="100" placeholder="Other amount" class="w-full bg-surface-pale border border-border-subtle rounded-xl px-4 py-2.5 text-sm text-on-surface focus:outline-none focus:border-primary">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-on-surface mb-1">PAN Number (for 80G Receipt)</label>
+                  <input type="text" placeholder="ABCDE1234F" class="w-full bg-surface-pale border border-border-subtle rounded-xl px-4 py-2.5 text-sm uppercase text-on-surface focus:outline-none focus:border-primary">
+                </div>
+              </div>
+
+              <!-- Trust Notice -->
+              <div class="p-3 bg-surface-pale rounded-xl flex items-center justify-between text-xs text-text-muted">
+                <span class="flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-sm text-primary">verified_user</span>
+                  <span>UPI • GPay • Cards • NetBanking</span>
+                </span>
+                <span class="font-bold text-primary">Tax Exemption: Sec 80G</span>
+              </div>
+
+              <!-- Submit -->
+              <button id="donateSubmitBtn" type="submit" class="w-full py-3.5 bg-primary hover:bg-[#153f30] text-white font-bold text-base rounded-xl transition-all shadow-md flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined">favorite</span>
+                <span id="donateBtnText">Proceed to Donate ₹1,200</span>
+              </button>
+            </form>
+
+            <div id="donationSuccessMessage" class="hidden mt-4 p-4 bg-surface-mint text-primary rounded-xl text-center space-y-1">
+              <span class="material-symbols-outlined text-3xl">celebration</span>
+              <p class="font-bold text-base">धन्यवाद! Thank you for standing with our children.</p>
+              <p class="text-xs">Your tax-deductible 80G receipt will be dispatched within minutes of payment processing.</p>
+            </div>
+          </div>
+
+          <!-- Right: Direct Impact Assurance & Transparency -->
+          <div class="lg:col-span-5 space-y-5">
+            <div class="bg-surface-pale p-6 sm:p-8 rounded-3xl border border-border-subtle relative overflow-hidden">
+              <div class="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center mb-4 shadow-sm">
+                <span class="material-symbols-outlined text-2xl">verified_user</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-on-surface mb-2">
+                Direct Impact Guarantee (हमारा संकल्प)
+              </h3>
+              <p class="text-xs sm:text-sm text-on-surface-variant mb-4 leading-relaxed">
+                Every rupee you contribute is deployed directly to classroom supplies, daily hot nutrition, and vital health services for street children.
+              </p>
+              <ul class="space-y-2.5 mb-6 text-xs sm:text-sm text-on-surface">
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary text-base">check_circle</span>
+                  <span>Instant 80G Tax Exemption Certificate</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary text-base">check_circle</span>
+                  <span>Quarterly Audited Financial Reports Published Online</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary text-base">check_circle</span>
+                  <span>Direct Beneficiary Ground Progress Tracking</span>
+                </li>
+              </ul>
+              <button onclick="openDonationModal(1200)" class="inline-flex items-center gap-2 bg-primary hover:bg-[#153f30] text-white font-bold text-sm px-6 py-3 rounded-xl transition-all shadow-sm">
+                <span>Sponsor a Child Now (सहयोग करें)</span>
+                <span class="material-symbols-outlined text-sm">favorite</span>
+              </button>
+            </div>
+
+            <!-- Transparency notice -->
+            <div class="p-4 bg-surface-mint border border-primary/20 rounded-2xl flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary text-xl mt-0.5">policy</span>
+              <div>
+                <p class="text-xs font-bold text-primary">100% Financial Accountability</p>
+                <p class="text-[11px] text-on-surface-variant leading-relaxed">Registered Indian Non-Profit Trust. All accounts audited annually by independent chartered accountants.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================================
+         9. DIRECT CONTACT & VERIFICATION HUB
+         ======================================================================= -->
+    <section id="contact" class="w-full py-12 lg:py-16 bg-surface-pale border-t border-border-subtle">
+      <div class="max-w-[72rem] mx-auto px-4 sm:px-6 md:px-8">
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          
+          <!-- Helpline -->
+          <div class="bg-white p-5 rounded-2xl border border-border-subtle flex items-start gap-3.5 shadow-sm">
+            <div class="w-11 h-11 rounded-xl bg-surface-mint flex items-center justify-center text-primary flex-shrink-0">
+              <span class="material-symbols-outlined text-xl">call</span>
+            </div>
+            <div>
+              <h4 class="text-xs font-bold uppercase tracking-wider text-text-muted">Helpline & Support</h4>
+              <p class="text-base font-bold text-primary mt-0.5">+91 97117 18972</p>
+              <p class="text-[11px] text-text-muted">Mon - Sat (10 AM - 6 PM IST)</p>
+            </div>
+          </div>
+
+          <!-- Founder Direct Connect -->
+          <div class="bg-white p-5 rounded-2xl border border-border-subtle flex items-start gap-3.5 shadow-sm">
+            <div class="w-11 h-11 rounded-xl bg-[#25D366]/20 flex items-center justify-center text-[#1e7e34] flex-shrink-0">
+              <span class="material-symbols-outlined text-xl">chat</span>
+            </div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-text-muted">Founder Direct Connect</h4>
+                <span class="text-[10px] bg-surface-mint text-primary font-bold px-1.5 py-0.2 rounded">Verified</span>
+              </div>
+              <p class="text-sm font-bold text-on-surface mt-0.5">Ashish Kumar</p>
+              <p class="text-[11px] text-text-muted mb-2">Direct queries & center visit passes</p>
+              <a href="https://wa.me/919711718972?text=Hi%20Ashish%20ji,%20I%20would%20like%20to%20connect%20regarding%20RightPathNGO" target="_blank" class="inline-flex items-center gap-1.5 bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-bold px-3 py-1.5 rounded-lg transition-colors shadow-sm">
+                <span>WhatsApp Founder</span>
+                <span class="material-symbols-outlined text-xs">open_in_new</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Main Centers -->
+          <div class="bg-white p-5 rounded-2xl border border-border-subtle flex items-start gap-3.5 shadow-sm">
+            <div class="w-11 h-11 rounded-xl bg-surface-mint flex items-center justify-center text-primary flex-shrink-0">
+              <span class="material-symbols-outlined text-xl">location_on</span>
+            </div>
+            <div>
+              <h4 class="text-xs font-bold uppercase tracking-wider text-text-muted">Main Headquarters</h4>
+              <p class="text-xs font-bold text-on-surface mt-0.5">Delhi NCR Outreach Centers</p>
+              <p class="text-[11px] text-text-muted mt-0.5">Indraprastha, Rohini & Yamuna Khadar, New Delhi - 110085</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================================
+       FOOTER (Complete Institutional Disclosure & Socials)
+       ========================================================================= -->
+  <footer class="w-full bg-[#0d261c] text-white border-t border-white/10">
+    <div class="max-w-[72rem] mx-auto px-4 sm:px-6 md:px-8 py-14">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 mb-12">
+        
+        <!-- Brand Info -->
+        <div class="lg:col-span-4 space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="assets/images/rightpath_logo.png" alt="RightPath Logo" class="h-10 w-10 object-cover rounded-full bg-white ring-2 ring-accent-sprout/40">
+            <span class="text-xl font-extrabold text-white tracking-tight">RightPathNGO</span>
+          </div>
+          <p class="text-xs sm:text-sm text-[#b2d5bf] leading-relaxed max-w-sm font-normal">
+            Dedicated to nurturing identity, providing quality education, and enabling health equity across underserved communities. Empowering children and youth toward dignified self-reliance.
+          </p>
+          <div class="inline-flex items-center gap-2.5 bg-white/10 p-3 rounded-xl border border-white/15">
+            <span class="material-symbols-outlined text-accent-sprout text-xl">verified</span>
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-accent-sprout block">80G Tax Exemption Certified</span>
+              <span class="text-[11px] text-[#d3e7da]">All domestic contributions are eligible for 50% deduction.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="lg:col-span-3 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-accent-sprout">Quick Navigation</h4>
+          <ul class="space-y-2 text-xs sm:text-sm text-[#b2d5bf]">
+            <li><button onclick="openAboutUsModal()" class="hover:text-white transition-colors text-left">About RightPath NGO</button></li>
+            <li><a href="#initiatives" class="hover:text-white transition-colors">Our 6 Initiatives & Centers</a></li>
+            <li><button onclick="openAboutUsModal()" class="hover:text-white transition-colors text-left">Founder's Note & Mission</button></li>
+            <li><a href="#impact-metrics" class="hover:text-white transition-colors">Annual Impact Report</a></li>
+            <li><a href="#stories" class="hover:text-white transition-colors">Grassroots Ground Stories</a></li>
+            <li><a href="#donate" class="hover:text-white transition-colors">Direct Giving & Sec 80G</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Details -->
+        <div class="lg:col-span-3 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-accent-sprout">Contact Us</h4>
+          <ul class="space-y-2 text-xs sm:text-sm text-[#b2d5bf]">
+            <li class="flex items-start gap-2">
+              <span class="material-symbols-outlined text-sm text-accent-sprout mt-0.5">location_on</span>
+              <span>Delhi NCR Community Center, New Delhi, India</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-accent-sprout">mail</span>
+              <span>contact@rightpathngo.org</span>
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm text-accent-sprout">call</span>
+              <span>+91 97117 18972</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Connect Socials -->
+        <div class="lg:col-span-2 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-accent-sprout">Follow Ground Work</h4>
+          <p class="text-xs text-[#b2d5bf]">Follow our journey of transforming lives on ground.</p>
+          <div class="flex items-center gap-2 pt-1">
+            <a href="https://www.instagram.com/right_path.26?knvt=N2xwb2hhYWVqOGsy&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-accent-sprout hover:text-primary transition-all">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://youtube.com/@ashuzx8377?si=XQQUUXwqwEMC10rl" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-accent-sprout hover:text-primary transition-all">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/share/1NePLPmDPH/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-accent-sprout hover:text-primary transition-all">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-[#b2d5bf]">
+        <p>© 2026 RightPath NGO (Registered Public Charitable Trust). All rights reserved.</p>
+        <div class="flex items-center gap-5">
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-white transition-colors">80G Transparency Audit</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- =========================================================================
+       DONATION POPUP MODAL (Frequency Toggle, PAN, Live Reel Opt-in)
+       ========================================================================= -->
+  <div id="donationModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm overflow-y-auto" role="dialog" aria-modal="true">
+    <div class="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl border border-border-subtle overflow-hidden my-8">
+      
+      <!-- Modal Header -->
+      <div class="bg-primary text-white p-6 relative flex items-start justify-between">
+        <div>
+          <div class="inline-flex items-center gap-1.5 bg-white/15 px-2.5 py-0.5 rounded-full text-[11px] text-accent-sprout uppercase tracking-wider font-bold mb-1">
+            <span class="material-symbols-outlined text-sm">verified</span>
+            <span>100% Tax Deductible (Sec 80G)</span>
+          </div>
+          <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-white">
+            Make a Direct Impact with RightPath <span class="text-accent-sprout font-normal font-serif">| एक नई पहचान</span>
+          </h2>
+          <p class="text-xs text-[#b8dfc4] mt-0.5">Every rupee directly sponsors learning materials, hot meals, and medical care.</p>
+        </div>
+        <button id="closeModalBtn" type="button" class="text-white/80 hover:text-white bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors flex-shrink-0 ml-3 focus:outline-none">
+          <span class="material-symbols-outlined text-xl">close</span>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <form id="popupDonationForm" class="p-6 space-y-4">
+        
+        <!-- Frequency Switcher -->
+        <div class="flex rounded-xl bg-surface-mint p-1 border border-border-subtle">
+          <button type="button" id="freqOneTime" class="flex-1 py-2 text-center font-bold text-xs sm:text-sm rounded-lg bg-white text-primary shadow-sm transition-all" onclick="setModalFrequency('one-time')">Give One-Time</button>
+          <button type="button" id="freqMonthly" class="flex-1 py-2 text-center font-semibold text-xs sm:text-sm rounded-lg text-text-muted hover:text-primary transition-all flex items-center justify-center gap-1" onclick="setModalFrequency('monthly')">
+            <span>Monthly Impact Hero</span>
+            <span class="material-symbols-outlined text-xs text-[#f59e0b]" style="font-variation-settings: 'FILL' 1;">star</span>
+          </button>
+        </div>
+
+        <!-- Cause Selector -->
+        <div>
+          <label class="block text-xs font-bold text-on-surface mb-1">Choose Cause to Support</label>
+          <select id="modalProgramSelect" class="w-full bg-surface-pale border border-border-subtle rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-on-surface focus:outline-none focus:border-primary font-medium">
+            <option value="General Corpus - Immediate Need">General Corpus (Where Need is Most Urgent)</option>
+            <option value="Shiksha Abhiyan - Education">1. Shiksha Abhiyan (Child Education & Digital Labs)</option>
+            <option value="Poshan Sahayata - Meals">2. Poshan Sahayata (Nutritious Hot Mid-Day Meals)</option>
+            <option value="Arogya Swasthya Seva">3. Arogya Seva (Health Camps & Hygiene Kits)</option>
+            <option value="Kaushal Vikas - Women Livelihoods">4. Kaushal Vikas (Vocational Training for Mothers)</option>
+            <option value="Vriddha Care - Elders">5. Vriddha Care (Elderly Companionship & Medicines)</option>
+          </select>
+        </div>
+
+        <!-- Preset Amounts -->
+        <div>
+          <label class="block text-xs font-bold text-on-surface mb-1">Select Donation Tier</label>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            <button type="button" onclick="setModalAmount(500)" class="modal-amt-btn py-2.5 px-2 rounded-xl border border-border-subtle text-center hover:border-primary transition-all bg-surface-pale">
+              <span class="amt-label block text-sm font-bold text-on-surface">₹500</span>
+              <span class="block text-[10px] text-text-muted">Stationery Kit</span>
+            </button>
+            <button type="button" onclick="setModalAmount(1200)" class="modal-amt-btn py-2.5 px-2 rounded-xl border-2 border-primary bg-surface-mint text-center transition-all">
+              <span class="amt-label block text-sm font-bold text-primary">₹1,200</span>
+              <span class="block text-[10px] text-primary font-semibold">1 Mo Meals</span>
+            </button>
+            <button type="button" onclick="setModalAmount(3000)" class="modal-amt-btn py-2.5 px-2 rounded-xl border border-border-subtle text-center hover:border-primary transition-all bg-surface-pale">
+              <span class="amt-label block text-sm font-bold text-on-surface">₹3,000</span>
+              <span class="block text-[10px] text-text-muted">Vocational Kit</span>
+            </button>
+            <button type="button" onclick="setModalAmount(5000)" class="modal-amt-btn py-2.5 px-2 rounded-xl border border-border-subtle text-center hover:border-primary transition-all bg-surface-pale">
+              <span class="amt-label block text-sm font-bold text-on-surface">₹5,000</span>
+              <span class="block text-[10px] text-text-muted">Semester</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Custom Amount -->
+        <div class="relative">
+          <span class="absolute left-3.5 top-2.5 text-text-muted font-bold text-sm">₹</span>
+          <input id="modalCustomAmount" type="number" min="100" placeholder="Enter custom amount (INR)" class="w-full bg-surface-pale border border-border-subtle rounded-xl pl-8 pr-3.5 py-2.5 text-sm text-on-surface focus:outline-none focus:border-primary">
+        </div>
+
+        <!-- Donor Information -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+          <div>
+            <label class="block text-xs font-bold text-on-surface mb-1">Full Name *</label>
+            <input type="text" required placeholder="e.g. Ananya Sen" class="w-full bg-surface-pale border border-border-subtle rounded-xl px-3.5 py-2 text-xs sm:text-sm text-on-surface focus:outline-none focus:border-primary">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-on-surface mb-1">Email Address *</label>
+            <input type="email" required placeholder="ananya@example.com" class="w-full bg-surface-pale border border-border-subtle rounded-xl px-3.5 py-2 text-xs sm:text-sm text-on-surface focus:outline-none focus:border-primary">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-on-surface mb-1">WhatsApp / Phone Number</label>
+            <input type="tel" placeholder="+91 98765 43210" class="w-full bg-surface-pale border border-border-subtle rounded-xl px-3.5 py-2 text-xs sm:text-sm text-on-surface focus:outline-none focus:border-primary">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-on-surface mb-1">PAN (For 80G Tax Receipt)</label>
+            <input type="text" placeholder="ABCDE1234F" class="w-full bg-surface-pale border border-border-subtle rounded-xl px-3.5 py-2 text-xs sm:text-sm text-on-surface uppercase focus:outline-none focus:border-primary">
+          </div>
+        </div>
+
+        <!-- Live Donor Reel Feature Opt-in -->
+        <div class="p-3 bg-surface-mint/80 border border-primary/20 rounded-xl flex items-center justify-between gap-3">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-full bg-primary text-accent-sprout flex items-center justify-center font-bold text-xs ring-2 ring-white flex-shrink-0">
+              YOU
+            </div>
+            <div>
+              <span class="text-xs text-primary font-bold block">Join the Community Story Reel</span>
+              <span class="text-[10px] text-text-muted leading-tight block">Feature your name & badge on the Live Donor Bar</span>
+            </div>
+          </div>
+          <label class="relative inline-flex items-center cursor-pointer flex-shrink-0">
+            <input type="checkbox" id="reelOptIn" class="sr-only peer" checked>
+            <div class="w-9 h-5 bg-surface-dim peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+          </label>
+        </div>
+
+        <!-- Submit & Security Notice -->
+        <div class="pt-2 space-y-2">
+          <button id="modalSubmitBtn" type="submit" class="w-full py-3.5 bg-primary hover:bg-[#153f30] text-white font-bold text-sm sm:text-base rounded-xl transition-all shadow-md flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-lg">lock</span>
+            <span id="modalSubmitBtnText">Proceed to Pay ₹1,200 (सुरक्षित भुगतान)</span>
+          </button>
+          <div class="flex items-center justify-between text-text-muted text-[11px] px-1">
+            <span class="flex items-center gap-1">
+              <span class="material-symbols-outlined text-xs text-primary">verified_user</span>
+              <span>UPI • GPay • PhonePe • Cards • NetBanking</span>
+            </span>
+            <span class="text-primary font-semibold">256-Bit SSL Encrypted</span>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- =========================================================================
+       ABOUT US & FOUNDER'S NOTE MODAL (YourSaathi-Inspired Design)
+       ========================================================================= -->
+  <div id="aboutUsModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto" role="dialog" aria-modal="true">
+    <div class="relative w-full max-w-3xl bg-[#0d2419] rounded-3xl shadow-[0_25px_70px_rgba(0,0,0,0.7)] border border-accent-sprout/40 overflow-hidden my-8 text-white">
+      
+      <!-- Modal Header -->
+      <div class="bg-gradient-to-r from-primary via-[#16563a] to-[#0d2419] p-6 sm:p-7 relative flex items-start justify-between border-b border-accent-sprout/20">
+        <div>
+          <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-3 py-1 rounded-full text-[11px] uppercase font-extrabold tracking-widest text-accent-sprout mb-2">
+            <span class="w-2 h-2 rounded-full bg-accent-sprout animate-ping"></span>
+            <span>The Visionary Behind RightPath NGO</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white flex items-center gap-2">
+            <span>Meet Our <span class="gradient-text-sprout">Founder</span></span>
+          </h2>
+          <p class="text-xs sm:text-sm text-[#b8dfc4] mt-1 max-w-xl leading-relaxed">
+            A 21-year-old BCA graduate on a grassroots mission to bring dignity, street education, and healthcare equity to every child across Delhi NCR.
+          </p>
+        </div>
+        <button id="closeAboutUsModalBtn" onclick="closeAboutUsModal()" type="button" class="text-white/80 hover:text-white bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-colors flex-shrink-0 ml-4 focus:outline-none border border-white/15">
+          <span class="material-symbols-outlined text-2xl">close</span>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-5 sm:p-7 space-y-6 max-h-[75vh] overflow-y-auto">
+        
+        <!-- Top Profile & Stats Hub -->
+        <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center pb-6 border-b border-white/10">
+          
+          <!-- Left: Rotating Ring Founder Photo -->
+          <div class="sm:col-span-5 flex flex-col items-center text-center">
+            <div class="relative group">
+              <div class="about-profile-ring w-32 h-32 sm:w-36 sm:h-36 rounded-2xl p-1 shadow-2xl about-float">
+                <div class="w-full h-full rounded-xl overflow-hidden bg-[#102f24] border border-white/20">
+                  <img
+                    src="assets/images/founder.png"
+                    alt="Ashish Kumar - Founder & Chief Trustee"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    onerror="this.src='assets/images/rightpath_logo.png'"
+                  >
+                </div>
+              </div>
+              <span class="absolute -bottom-2 bg-gradient-to-r from-primary to-[#18754b] text-accent-sprout font-bold text-[11px] px-2.5 py-0.5 rounded-full border border-accent-sprout/40 shadow-lg">
+                Age 21 • Founder
+              </span>
+            </div>
+
+            <div class="mt-4 space-y-0.5">
+              <h3 class="text-xl font-extrabold text-white">Ashish Kumar</h3>
+              <p class="text-xs font-semibold uppercase tracking-wider text-accent-sprout">Founder & Chief Trustee</p>
+              <p class="text-[11px] text-[#a5d2b6]">BCA Graduate • Grassroots Changemaker</p>
+            </div>
+
+            <!-- Social Links with Animation -->
+            <div class="flex items-center gap-2 mt-3.5">
+              <!-- Instagram -->
+              <a
+                href="https://www.instagram.com/right_path.26?knvt=N2xwb2hhYWVqOGsy&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Follow on Instagram"
+                aria-label="Instagram"
+                class="about-social-btn w-9 h-9 rounded-xl bg-gradient-to-tr from-[#833ab4] via-[#fd1d1d] to-[#fcb045] flex items-center justify-center text-white shadow-md hover:shadow-pink-500/40"
+              >
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              </a>
+
+              <!-- YouTube -->
+              <a
+                href="https://youtube.com/@ashuzx8377?si=XQQUUXwqwEMC10rl"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Subscribe on YouTube"
+                aria-label="YouTube"
+                class="about-social-btn w-9 h-9 rounded-xl bg-[#ff0000] hover:bg-[#cc0000] flex items-center justify-center text-white shadow-md hover:shadow-red-500/40"
+              >
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
+
+              <!-- Facebook -->
+              <a
+                href="https://www.facebook.com/share/1NePLPmDPH/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Connect on Facebook"
+                aria-label="Facebook"
+                class="about-social-btn w-9 h-9 rounded-xl bg-[#1877f2] hover:bg-[#1567d3] flex items-center justify-center text-white shadow-md hover:shadow-blue-500/40"
+              >
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </a>
+
+              <!-- WhatsApp -->
+              <a
+                href="https://wa.me/919711718972?text=Hi%20Ashish%20ji,%20I%20would%20like%20to%20connect%20regarding%20RightPathNGO"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Chat on WhatsApp"
+                aria-label="WhatsApp"
+                class="about-social-btn w-9 h-9 rounded-xl bg-[#25D366] hover:bg-[#20ba59] flex items-center justify-center text-white shadow-md hover:shadow-green-500/40"
+              >
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: 4 Stat Pills -->
+          <div class="sm:col-span-7 space-y-4">
+            <div class="grid grid-cols-2 gap-3">
+              <div class="about-stat-card p-3.5 rounded-xl text-center">
+                <span class="block text-2xl font-extrabold text-accent-sprout leading-tight">21</span>
+                <span class="text-[11px] uppercase font-extrabold tracking-wider text-white">Years Old</span>
+                <p class="text-[9px] text-[#a5d2b6] mt-0.5">Young Visionary</p>
+              </div>
+              <div class="about-stat-card p-3.5 rounded-xl text-center">
+                <span class="block text-2xl font-extrabold text-accent-sprout leading-tight">BCA</span>
+                <span class="text-[11px] uppercase font-extrabold tracking-wider text-white">Graduate</span>
+                <p class="text-[9px] text-[#a5d2b6] mt-0.5">Computer Science</p>
+              </div>
+              <div class="about-stat-card p-3.5 rounded-xl text-center">
+                <span class="block text-2xl font-extrabold text-accent-sprout leading-tight">15.4K+</span>
+                <span class="text-[11px] uppercase font-extrabold tracking-wider text-white">Lives Touched</span>
+                <p class="text-[9px] text-[#a5d2b6] mt-0.5">Grassroots Impact</p>
+              </div>
+              <div class="about-stat-card p-3.5 rounded-xl text-center">
+                <span class="block text-2xl font-extrabold text-accent-sprout leading-tight">1</span>
+                <span class="text-[11px] uppercase font-extrabold tracking-wider text-white">Mission</span>
+                <p class="text-[9px] text-[#a5d2b6] mt-0.5">एक नई पहचान</p>
+              </div>
+            </div>
+
+            <!-- Founder Quote in Modal -->
+            <div class="p-3.5 rounded-xl bg-white/5 border border-white/10 relative">
+              <span class="material-symbols-outlined text-3xl text-accent-sprout absolute top-2 right-3 opacity-30">format_quote</span>
+              <p class="text-xs italic text-[#d4f2dc] leading-relaxed pr-6">
+                “सच्चा सशक्तिकरण दान नहीं है जो किसी को निर्भर बनाए, बल्कि पहचान की वह लौ जलाना है जिससे बच्चे खुद अपनी तकदीर लिख सकें।”
+              </p>
+              <div class="mt-2 flex items-center justify-between text-[11px] text-[#a5d2b6]">
+                <span class="text-accent-sprout font-bold">— Ashish Kumar (Founder)</span>
+                <span>New Delhi, India</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 4 Narrative Story Cards (YourSaathi Structure) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          
+          <!-- 1. The Origin Story -->
+          <div class="about-info-card p-4 sm:p-5 rounded-2xl space-y-2">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-xl bg-accent-sprout/20 flex items-center justify-center text-accent-sprout flex-shrink-0">
+                <span class="material-symbols-outlined text-lg">auto_stories</span>
+              </div>
+              <h4 class="text-sm font-bold text-white">The Origin Story (शुरुआत की कहानी)</h4>
+            </div>
+            <p class="text-xs text-[#b2d5bf] leading-relaxed">
+              At just 21, witnessing young children collecting scrap under Delhi flyovers moved Ashish deeply. He started by teaching alphabets under open tree canopies with a notebook and blackboard. That humble beginning has now blossomed into RightPath NGO.
+            </p>
+          </div>
+
+          <!-- 2. Tech-Driven Mindset -->
+          <div class="about-info-card p-4 sm:p-5 rounded-2xl space-y-2">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-xl bg-accent-sprout/20 flex items-center justify-center text-accent-sprout flex-shrink-0">
+                <span class="material-symbols-outlined text-lg">code</span>
+              </div>
+              <h4 class="text-sm font-bold text-white">Tech-Driven Mindset (BCA Graduate)</h4>
+            </div>
+            <p class="text-xs text-[#b2d5bf] leading-relaxed">
+              Holding a <strong>Bachelor of Computer Applications (BCA)</strong> degree, Ashish infuses modern tech into grassroots social work. From basic computer labs for slum kids to 100% transparent digital donor ledgers, every rupee and student record is trackable.
+            </p>
+          </div>
+
+          <!-- 3. Mission-Driven Leadership -->
+          <div class="about-info-card p-4 sm:p-5 rounded-2xl space-y-2">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-xl bg-accent-sprout/20 flex items-center justify-center text-accent-sprout flex-shrink-0">
+                <span class="material-symbols-outlined text-lg">handshake</span>
+              </div>
+              <h4 class="text-sm font-bold text-white">Mission-Driven Grassroots Leadership</h4>
+            </div>
+            <p class="text-xs text-[#b2d5bf] leading-relaxed">
+              Ashish leads with a clear philosophy: charity should never foster dependence. RightPath programs are designed to graduate families out of poverty through education, digital literacy, and self-sustaining vocational workshops.
+            </p>
+          </div>
+
+          <!-- 4. Youth & Community Mobilization -->
+          <div class="about-info-card p-4 sm:p-5 rounded-2xl space-y-2">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-xl bg-accent-sprout/20 flex items-center justify-center text-accent-sprout flex-shrink-0">
+                <span class="material-symbols-outlined text-lg">diversity_3</span>
+              </div>
+              <h4 class="text-sm font-bold text-white">Youth & Community Mobilization</h4>
+            </div>
+            <p class="text-xs text-[#b2d5bf] leading-relaxed">
+              Under Ashish’s leadership, over <strong>180+ college scholars and grassroots educators</strong> spend their weekends on the ground—teaching, packing warm meals, and conducting medical checks with deep community trust.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Expertise & Focus Areas Tags -->
+        <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
+          <span class="block text-xs uppercase tracking-wider font-extrabold text-accent-sprout mb-2.5">Expertise & Focus Areas:</span>
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="about-skill-tag px-3 py-1 rounded-xl text-xs font-semibold text-accent-sprout cursor-default">🎓 BCA Graduate</span>
+            <span class="about-skill-tag px-3 py-1 rounded-xl text-xs font-semibold text-accent-sprout cursor-default">🏫 Grassroots Street Schools</span>
+            <span class="about-skill-tag px-3 py-1 rounded-xl text-xs font-semibold text-accent-sprout cursor-default">💻 Digital Foundational Labs</span>
+            <span class="about-skill-tag px-3 py-1 rounded-xl text-xs font-semibold text-accent-sprout cursor-default">🍲 Poshan Mid-Day Meals</span>
+            <span class="about-skill-tag px-3 py-1 rounded-xl text-xs font-semibold text-accent-sprout cursor-default">🏥 Preventive Arogya Camps</span>
+            <span class="about-skill-tag px-3 py-1 rounded-xl text-xs font-semibold text-accent-sprout cursor-default">🧵 Women Tailoring Livelihoods</span>
+            <span class="about-skill-tag px-3 py-1 rounded-xl text-xs font-semibold text-accent-sprout cursor-default">⚖️ 100% 80G Tax Transparency</span>
+            <span class="about-skill-tag px-3 py-1 rounded-xl text-xs font-semibold text-accent-sprout cursor-default">🌟 Youth Social Entrepreneurship</span>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-white/15">
+          <div class="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+            <a
+              href="https://wa.me/919711718972?text=Hi%20Ashish%20ji,%20I%20would%20like%20to%20connect%20regarding%20RightPathNGO"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl transition-all shadow-md hover:scale-105"
+            >
+              <span>Chat with Founder on WhatsApp</span>
+              <span class="material-symbols-outlined text-sm">open_in_new</span>
+            </a>
+            <button
+              onclick="closeAboutUsModal(); openDonationModal(1200);"
+              class="inline-flex items-center gap-2 bg-accent-sprout hover:bg-white text-primary font-extrabold text-xs sm:text-sm px-5 py-3 rounded-xl transition-all shadow-md hover:scale-105"
+            >
+              <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">favorite</span>
+              <span>Support Our Centers</span>
+            </button>
+          </div>
+          <button
+            onclick="closeAboutUsModal()"
+            class="w-full sm:w-auto px-6 py-3 border border-white/20 hover:bg-white/10 rounded-xl font-semibold text-xs sm:text-sm text-white/90 transition-colors"
+          >
+            Close
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- =========================================================================
+       FLOATING WHATSAPP FOUNDER WIDGET
+       ========================================================================= -->
+  <div id="floating-whatsapp-widget" class="fixed bottom-6 right-6 z-40 flex items-center group">
+    <a href="https://wa.me/919711718972?text=Hi%20Ashish%20ji%2C%20I%20would%20like%20to%20connect%20with%20RightPathNGO" target="_blank" rel="noopener noreferrer" aria-label="Chat with Founder on WhatsApp" class="relative flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20ba59] text-white pl-3.5 pr-4 py-3 rounded-full shadow-2xl transition-all duration-300 hover:scale-105">
+      <div class="relative flex items-center justify-center">
+        <svg class="w-6 h-6 fill-current text-white" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        <span class="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-white"></span>
+        </span>
+      </div>
+      <div class="flex flex-col text-left leading-tight">
+        <span class="text-xs font-bold text-white tracking-wide flex items-center gap-1.5">
+          <span>Chat with Founder</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+        </span>
+        <span class="text-[10px] text-white/90 font-medium">Ashish Kumar • Online</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
