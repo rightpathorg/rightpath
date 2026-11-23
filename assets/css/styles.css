@@ -485,41 +485,8 @@ body {
 
 
 /* ==========================================================================
-   Dynamic Lighting & Ambient Aurora System
+   Dynamic Lighting & Ambient Aurora System (Pure Website Atmosphere)
    ========================================================================== */
-#dynamic-cursor-light {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 40;
-  transition: opacity 0.3s ease;
-  opacity: 0;
-  background: radial-gradient(120px circle at var(--cursor-x, -500px) var(--cursor-y, -500px), rgba(34, 197, 94, 0.32), transparent 70%),
-              radial-gradient(450px circle at var(--cursor-x, -500px) var(--cursor-y, -500px), rgba(16, 185, 129, 0.18), rgba(0, 81, 52, 0.08) 45%, transparent 75%);
-}
-
-#dynamic-cursor-orb {
-  position: fixed;
-  pointer-events: none;
-  z-index: 50;
-  border-radius: 50%;
-  width: 28px;
-  height: 28px;
-  transform: translate(-50%, -50%);
-  transition: width 0.2s ease, height 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
-  opacity: 0;
-  background: radial-gradient(circle, rgba(34, 197, 94, 0.85) 0%, rgba(0, 81, 52, 0.35) 70%, transparent 100%);
-  box-shadow: 0 0 25px 4px rgba(34, 197, 94, 0.6), 0 0 50px 10px rgba(0, 81, 52, 0.3);
-  border: 1.5px solid rgba(255, 255, 255, 0.6);
-}
-
-#dynamic-cursor-orb.cursor-hover-interactive {
-  width: 52px;
-  height: 52px;
-  background: radial-gradient(circle, rgba(183, 217, 167, 0.7) 0%, rgba(34, 197, 94, 0.4) 60%, transparent 100%);
-  box-shadow: 0 0 35px 8px rgba(34, 197, 94, 0.5), 0 0 60px 15px rgba(183, 217, 167, 0.4);
-}
-
 .dynamic-aurora-bg {
   position: fixed;
   inset: 0;
