@@ -4,32 +4,40 @@ export default function AboutUsModal({ isOpen, onClose, onOpenDonation }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto" role="dialog" aria-modal="true">
-      <div className="relative w-full max-w-3xl bg-[#0d2419] rounded-3xl shadow-[0_25px_70px_rgba(0,0,0,0.7)] border border-accent-sprout/40 overflow-hidden my-8 text-white">
+    <div
+      className="fixed inset-0 z-[100] flex flex-col items-center justify-start sm:justify-center p-2.5 sm:p-4 bg-black/85 backdrop-blur-md overflow-y-auto"
+      role="dialog"
+      aria-modal="true"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+    >
+      <div className="relative w-full max-w-3xl bg-[#0d2419] rounded-3xl shadow-[0_25px_70px_rgba(0,0,0,0.7)] border border-accent-sprout/40 overflow-hidden my-auto sm:my-8 text-white flex flex-col max-h-[94vh] sm:max-h-[85vh]">
         
-        {/* Modal Header */}
-        <div className="bg-gradient-to-r from-primary via-[#16563a] to-[#0d2419] p-6 relative flex items-start justify-between border-b border-accent-sprout/20">
-          <div>
-            <div className="inline-flex items-center gap-1.5 bg-white/10 border border-white/20 px-3 py-0.5 rounded-full text-[11px] text-accent-sprout uppercase tracking-wider font-extrabold mb-1">
-              <span className="material-symbols-outlined text-sm">badge</span>
+        {/* Sticky Modal Header with Accessible Close Button */}
+        <div className="sticky top-0 z-30 bg-gradient-to-r from-primary via-[#16563a] to-[#0d2419] px-4 py-3 sm:px-6 sm:py-4 flex items-center justify-between border-b border-accent-sprout/20 shadow-md">
+          <div className="pr-2">
+            <div className="inline-flex items-center gap-1.5 bg-white/10 border border-white/20 px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] text-accent-sprout uppercase tracking-wider font-extrabold mb-0.5">
+              <span className="material-symbols-outlined text-xs sm:text-sm">badge</span>
               <span>Founder & About Us • हमारी कहानी</span>
             </div>
-            <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-white flex items-center gap-2">
+            <h2 className="text-base sm:text-xl font-extrabold tracking-tight text-white flex items-center gap-2">
               <span>About RightPath NGO & Founder Ashish Kumar</span>
             </h2>
-            <p className="text-xs text-[#b8dfc4] mt-0.5">Empowering underprivileged children and families across Delhi NCR through education and healthcare.</p>
+            <p className="text-[11px] sm:text-xs text-[#b8dfc4] mt-0.5 hidden sm:block">Empowering underprivileged children and families across Delhi NCR through education and healthcare.</p>
           </div>
           <button
             onClick={onClose}
             type="button"
-            className="text-white/80 hover:text-white bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors flex-shrink-0 ml-3 focus:outline-none border border-white/10"
+            aria-label="Close modal"
+            className="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center transition-all flex-shrink-0 active:scale-90 focus:outline-none border border-white/20 cursor-pointer shadow-sm"
           >
             <span className="material-symbols-outlined text-xl">close</span>
           </button>
         </div>
 
         {/* Modal Body */}
-        <div className="p-5 sm:p-7 space-y-6 max-h-[75vh] overflow-y-auto">
+        <div className="p-4 sm:p-7 space-y-6 overflow-y-auto overscroll-contain flex-1">
           
           {/* Top Profile & Stats Hub */}
           <div className="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center pb-6 border-b border-white/10">

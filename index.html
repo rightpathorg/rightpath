@@ -1208,28 +1208,28 @@
   <!-- =========================================================================
        DONATION POPUP MODAL (Frequency Toggle, PAN, Live Reel Opt-in)
        ========================================================================= -->
-  <div id="donationModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm overflow-y-auto" role="dialog" aria-modal="true">
-    <div class="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl border border-border-subtle overflow-hidden my-8">
+  <div id="donationModal" class="fixed inset-0 z-[100] hidden flex flex-col items-center justify-start sm:justify-center p-2.5 sm:p-4 bg-black/75 backdrop-blur-md overflow-y-auto" role="dialog" aria-modal="true">
+    <div class="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl border border-border-subtle overflow-hidden my-auto sm:my-8 max-h-[94vh] sm:max-h-[85vh] flex flex-col">
       
-      <!-- Modal Header -->
-      <div class="bg-primary text-white p-6 relative flex items-start justify-between">
-        <div>
-          <div class="inline-flex items-center gap-1.5 bg-white/15 px-2.5 py-0.5 rounded-full text-[11px] text-accent-sprout uppercase tracking-wider font-bold mb-1">
-            <span class="material-symbols-outlined text-sm">verified</span>
+      <!-- Sticky Modal Header with Accessible Close Button -->
+      <div class="sticky top-0 z-30 bg-primary text-white px-4 py-3 sm:px-6 sm:py-4 flex items-center justify-between shadow-md">
+        <div class="pr-2">
+          <div class="inline-flex items-center gap-1.5 bg-white/15 px-2 py-0.5 rounded-full text-[10px] sm:text-[11px] text-accent-sprout uppercase tracking-wider font-bold mb-0.5">
+            <span class="material-symbols-outlined text-xs sm:text-sm">verified</span>
             <span>100% Tax Deductible (Sec 80G)</span>
           </div>
-          <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-white">
-            Make a Direct Impact with RightPath <span class="text-accent-sprout font-normal font-serif">| एक नई पहचान</span>
+          <h2 class="text-base sm:text-xl font-bold tracking-tight text-white leading-tight">
+            Make a Direct Impact with RightPath <span class="text-accent-sprout font-normal font-serif hidden xs:inline">| एक नई पहचान</span>
           </h2>
-          <p class="text-xs text-[#b8dfc4] mt-0.5">Every rupee directly sponsors learning materials, hot meals, and medical care.</p>
+          <p class="text-[11px] sm:text-xs text-[#b8dfc4] mt-0.5 hidden sm:block">Every rupee directly sponsors learning materials, hot meals, and medical care.</p>
         </div>
-        <button id="closeModalBtn" type="button" class="text-white/80 hover:text-white bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors flex-shrink-0 ml-3 focus:outline-none">
+        <button id="closeModalBtn" type="button" aria-label="Close modal" class="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center transition-all flex-shrink-0 active:scale-90 focus:outline-none cursor-pointer shadow-sm">
           <span class="material-symbols-outlined text-xl">close</span>
         </button>
       </div>
 
-      <!-- Modal Body -->
-      <form id="popupDonationForm" class="p-6 space-y-4">
+      <!-- Scrollable Modal Body -->
+      <form id="popupDonationForm" class="p-4 sm:p-6 space-y-3.5 overflow-y-auto overscroll-contain flex-1">
         
         <!-- Frequency Switcher -->
         <div class="flex rounded-xl bg-surface-mint p-1 border border-border-subtle">
@@ -1345,30 +1345,30 @@
   <!-- =========================================================================
        ABOUT US & FOUNDER'S NOTE MODAL (YourSaathi-Inspired Design)
        ========================================================================= -->
-  <div id="aboutUsModal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto" role="dialog" aria-modal="true">
-    <div class="relative w-full max-w-3xl bg-[#0d2419] rounded-3xl shadow-[0_25px_70px_rgba(0,0,0,0.7)] border border-accent-sprout/40 overflow-hidden my-8 text-white">
+  <div id="aboutUsModal" class="fixed inset-0 z-[100] hidden flex flex-col items-center justify-start sm:justify-center p-2.5 sm:p-4 bg-black/85 backdrop-blur-md overflow-y-auto" role="dialog" aria-modal="true">
+    <div class="relative w-full max-w-3xl bg-[#0d2419] rounded-3xl shadow-[0_25px_70px_rgba(0,0,0,0.7)] border border-accent-sprout/40 overflow-hidden my-auto sm:my-8 text-white flex flex-col max-h-[94vh] sm:max-h-[85vh]">
       
-      <!-- Modal Header -->
-      <div class="bg-gradient-to-r from-primary via-[#16563a] to-[#0d2419] p-6 sm:p-7 relative flex items-start justify-between border-b border-accent-sprout/20">
-        <div>
-          <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-3 py-1 rounded-full text-[11px] uppercase font-extrabold tracking-widest text-accent-sprout mb-2">
-            <span class="w-2 h-2 rounded-full bg-accent-sprout animate-ping"></span>
+      <!-- Sticky Modal Header with Accessible Close Button -->
+      <div class="sticky top-0 z-30 bg-gradient-to-r from-primary via-[#16563a] to-[#0d2419] px-4 py-3 sm:px-6 sm:py-4 flex items-center justify-between border-b border-accent-sprout/20 shadow-md">
+        <div class="pr-2">
+          <div class="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-md border border-white/20 px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] uppercase font-extrabold tracking-widest text-accent-sprout mb-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-accent-sprout animate-ping"></span>
             <span>The Visionary Behind RightPath NGO</span>
           </div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white flex items-center gap-2">
+          <h2 class="text-base sm:text-2xl font-extrabold tracking-tight text-white flex items-center gap-2">
             <span>Meet Our <span class="gradient-text-sprout">Founder</span></span>
           </h2>
-          <p class="text-xs sm:text-sm text-[#b8dfc4] mt-1 max-w-xl leading-relaxed">
+          <p class="text-[11px] sm:text-xs text-[#b8dfc4] mt-0.5 max-w-xl leading-relaxed hidden sm:block">
             A 21-year-old BCA graduate on a grassroots mission to bring dignity, street education, and healthcare equity to every child across Delhi NCR.
           </p>
         </div>
-        <button id="closeAboutUsModalBtn" onclick="closeAboutUsModal()" type="button" class="text-white/80 hover:text-white bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-colors flex-shrink-0 ml-4 focus:outline-none border border-white/15">
-          <span class="material-symbols-outlined text-2xl">close</span>
+        <button id="closeAboutUsModalBtn" onclick="closeAboutUsModal()" type="button" aria-label="Close modal" class="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 text-white flex items-center justify-center transition-all flex-shrink-0 active:scale-90 focus:outline-none border border-white/20 cursor-pointer shadow-sm">
+          <span class="material-symbols-outlined text-xl">close</span>
         </button>
       </div>
 
-      <!-- Modal Body -->
-      <div class="p-5 sm:p-7 space-y-6 max-h-[75vh] overflow-y-auto">
+      <!-- Scrollable Modal Body -->
+      <div class="p-4 sm:p-7 space-y-6 overflow-y-auto overscroll-contain flex-1">
         
         <!-- Top Profile & Stats Hub -->
         <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center pb-6 border-b border-white/10">
