@@ -1,4 +1,5 @@
 import './globals.css';
+import DynamicLighting from '../components/DynamicLighting';
 
 export const metadata = {
   title: 'RightPath NGO | Bridging Hope & Dignity | हर ज़िंदगी को मिले एक नई पहचान',
@@ -16,7 +17,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="bg-surface font-sans text-on-surface antialiased selection:bg-accent-sprout selection:text-primary">
+      <body className="bg-surface font-sans text-on-surface antialiased selection:bg-accent-sprout selection:text-primary relative min-h-screen">
+        <DynamicLighting />
         {children}
       </body>
     </html>

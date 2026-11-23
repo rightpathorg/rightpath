@@ -122,7 +122,7 @@ export default function Hero({ onOpenDonation }) {
             <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4">
               <button
                 onClick={() => onOpenDonation(selectedPill.amount)}
-                className="inline-flex items-center gap-2.5 bg-accent-sprout hover:bg-white text-primary font-bold text-sm sm:text-base px-6 py-3.5 rounded-xl transition-all shadow-lg hover:shadow-accent-sprout/20 transform hover:-translate-y-0.5"
+                className="dynamic-light-btn inline-flex items-center gap-2.5 bg-accent-sprout hover:bg-white text-primary font-bold text-sm sm:text-base px-6 py-3.5 rounded-xl transition-all shadow-lg hover:shadow-accent-sprout/30 transform hover:-translate-y-0.5"
               >
                 <span className="material-symbols-outlined text-xl text-primary animate-bounce" style={{ fontVariationSettings: "'FILL' 1" }}>favorite</span>
                 <span>Donate ₹{selectedPill.amount.toLocaleString('en-IN')} ({selectedPill.label})</span>
@@ -136,15 +136,15 @@ export default function Hero({ onOpenDonation }) {
 
             {/* Quick Metrics */}
             <div className="pt-6 grid grid-cols-3 gap-3 border-t border-white/15">
-              <div className="bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-white/10 text-center lg:text-left">
+              <div className="dynamic-spotlight-card bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-white/10 text-center lg:text-left">
                 <span className="block text-2xl sm:text-3xl font-extrabold text-accent-sprout leading-tight">15,400+</span>
                 <span className="text-[11px] font-bold uppercase tracking-wider text-[#b2d5bf]">Lives Touched</span>
               </div>
-              <div className="bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-white/10 text-center lg:text-left">
+              <div className="dynamic-spotlight-card bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-white/10 text-center lg:text-left">
                 <span className="block text-2xl sm:text-3xl font-extrabold text-accent-sprout leading-tight">45,000+</span>
                 <span className="text-[11px] font-bold uppercase tracking-wider text-[#b2d5bf]">Meals Served</span>
               </div>
-              <div className="bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-white/10 text-center lg:text-left">
+              <div className="dynamic-spotlight-card bg-white/5 backdrop-blur-sm p-3 rounded-xl border border-white/10 text-center lg:text-left">
                 <span className="block text-2xl sm:text-3xl font-extrabold text-accent-sprout leading-tight">180+</span>
                 <span className="text-[11px] font-bold uppercase tracking-wider text-[#b2d5bf]">Mentors</span>
               </div>

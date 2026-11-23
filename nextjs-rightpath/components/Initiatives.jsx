@@ -135,7 +135,7 @@ export default function Initiatives({ onOpenDonation }) {
           {filtered.map((item) => (
             <article
               key={item.id}
-              className="bg-white rounded-2xl border border-border-subtle overflow-hidden flex flex-col justify-between hover:shadow-xl transition-all duration-300 group"
+              className="dynamic-spotlight-card bg-white rounded-2xl border border-border-subtle overflow-hidden flex flex-col justify-between hover:shadow-xl transition-all duration-300 group"
             >
               <div>
                 <div className="relative h-48 bg-surface-mint overflow-hidden">

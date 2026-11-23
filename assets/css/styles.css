@@ -482,3 +482,97 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+
+/* ==========================================================================
+   Dynamic Lighting & Ambient Aurora System
+   ========================================================================== */
+#dynamic-cursor-light {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 99;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  background: radial-gradient(650px circle at var(--cursor-x, -500px) var(--cursor-y, -500px), rgba(183, 217, 167, 0.16), rgba(0, 81, 52, 0.06) 40%, transparent 75%);
+}
+
+.dynamic-aurora-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.aurora-orb-1 {
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(183, 217, 167, 0.45) 0%, rgba(0, 81, 52, 0.25) 50%, transparent 70%);
+  filter: blur(100px);
+  opacity: 0.35;
+  animation: pulseOrb 8s ease-in-out infinite alternate;
+}
+
+.aurora-orb-2 {
+  position: absolute;
+  top: 35%;
+  left: -120px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(128, 185, 142, 0.4) 0%, rgba(23, 107, 72, 0.15) 55%, transparent 75%);
+  filter: blur(110px);
+  opacity: 0.3;
+  animation: floatOrb 14s ease-in-out infinite alternate;
+}
+
+.aurora-orb-3 {
+  position: absolute;
+  bottom: 80px;
+  right: -80px;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.3) 0%, rgba(183, 217, 167, 0.2) 50%, transparent 70%);
+  filter: blur(120px);
+  opacity: 0.25;
+  animation: floatOrb 18s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(40px, -60px) scale(1.12); }
+  100% { transform: translate(-30px, 40px) scale(0.92); }
+}
+
+@keyframes pulseOrb {
+  0%, 100% { transform: scale(1); opacity: 0.35; }
+  50% { transform: scale(1.15); opacity: 0.5; }
+}
+
+@keyframes lightBeamSweep {
+  0% { transform: translateX(-150%) skewX(-20deg); }
+  50%, 100% { transform: translateX(250%) skewX(-20deg); }
+}
+
+.dynamic-light-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.dynamic-light-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  animation: lightBeamSweep 5s ease-in-out infinite;
+  pointer-events: none;
+}

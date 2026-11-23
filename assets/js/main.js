@@ -798,3 +798,38 @@ window.addEventListener('keydown', (e) => {
     window.closeAboutUsModal?.();
   }
 });
+
+
+/* ==========================================================================
+   Dynamic Lighting Engine Initialization
+   ========================================================================== */
+(function initDynamicLighting() {
+  if (typeof window === 'undefined') return;
+  const hasPointer = window.matchMedia('(pointer: fine)').matches;
+  if (!hasPointer) return;
+
+  let lightEl = document.getElementById('dynamic-cursor-light');
+  if (!lightEl) {
+    lightEl = document.createElement('div');
+    lightEl.id = 'dynamic-cursor-light';
+    lightEl.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(lightEl);
+  }
+
+  let raf = null;
+  window.addEventListener('pointermove', function(e) {
+    if (raf) cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(function() {
+      lightEl.style.opacity = '1';
+      document.documentElement.style.setProperty('--cursor-x', e.clientX + 'px');
+      document.documentElement.style.setProperty('--cursor-y', e.clientY + 'px');
+    });
+  }, { passive: true });
+
+  document.addEventListener('mouseleave', function() {
+    if (lightEl) lightEl.style.opacity = '0';
+  });
+  document.addEventListener('mouseenter', function() {
+    if (lightEl) lightEl.style.opacity = '1';
+  });
+})();
