@@ -26,9 +26,12 @@ export default function DonationModal({ isOpen, onClose, defaultAmount = 1200, d
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm overflow-y-auto" role="dialog" aria-modal="true">
-      <div className="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl border border-border-subtle overflow-hidden my-8">
+      <div className="relative w-full max-w-xl my-8">
+        <div className="donation-ambient-halo" aria-hidden="true" />
+        <div className="donation-glow-wrapper">
+          <div className="bg-white rounded-[1.65rem] overflow-hidden shadow-2xl border border-border-subtle">
         
-        {/* Header */}
+            {/* Header */}
         <div className="bg-primary text-white p-6 relative flex items-start justify-between">
           <div>
             <div className="inline-flex items-center gap-1.5 bg-white/15 px-2.5 py-0.5 rounded-full text-[11px] text-accent-sprout uppercase tracking-wider font-bold mb-1">
@@ -154,7 +157,7 @@ export default function DonationModal({ isOpen, onClose, defaultAmount = 1200, d
             {!submitted ? (
               <button
                 type="submit"
-                className="w-full py-3.5 bg-primary hover:bg-[#153f30] text-white font-bold text-sm sm:text-base rounded-xl transition-all shadow-md flex items-center justify-center gap-2"
+                className="dynamic-light-btn w-full py-4 bg-gradient-to-r from-primary via-[#176b48] to-primary hover:from-[#153f30] hover:to-[#153f30] text-white font-bold text-sm sm:text-base rounded-xl transition-all shadow-lg hover:shadow-primary/30 flex items-center justify-center gap-2 transform hover:-translate-y-0.5"
               >
                 <span className="material-symbols-outlined text-lg">lock</span>
                 <span>Proceed to Pay ₹{amount.toLocaleString('en-IN')} (सुरक्षित भुगतान)</span>
@@ -174,6 +177,8 @@ export default function DonationModal({ isOpen, onClose, defaultAmount = 1200, d
             </div>
           </div>
         </form>
+          </div>
+        </div>
       </div>
     </div>
   );

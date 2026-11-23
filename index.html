@@ -909,23 +909,33 @@
     <!-- =======================================================================
          8. FAST IN-PAGE DIRECT GIVING & IMPACT ASSURANCE
          ======================================================================= -->
-    <section id="donate" class="w-full py-16 lg:py-24 bg-surface">
-      <div class="max-w-[72rem] mx-auto px-4 sm:px-6 md:px-8">
+    <section id="donate" class="w-full py-16 lg:py-24 bg-surface relative overflow-hidden">
+      <!-- Background Ambient Glow -->
+      <div class="pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 w-[45rem] h-[25rem] rounded-full opacity-40 blur-[100px]" style="background: radial-gradient(circle, rgba(183, 217, 167, 0.5) 0%, rgba(16, 185, 129, 0.2) 50%, transparent 70%);"></div>
+
+      <div class="max-w-[72rem] mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
-          <!-- Left: In-Page Fast Giving Engine -->
-          <div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-3xl border border-border-subtle shadow-md">
-            <div class="flex items-center justify-between pb-4 mb-4 border-b border-border-subtle">
-              <div>
-                <span class="text-xs uppercase font-extrabold tracking-wider text-primary">Direct Fast Giving</span>
-                <h3 class="text-xl sm:text-2xl font-bold text-on-surface">Support a Child’s Journey</h3>
-              </div>
-              <div class="flex items-center gap-1 text-primary bg-surface-mint px-2.5 py-1 rounded-lg text-xs font-bold">
-                <span class="material-symbols-outlined text-sm">lock</span>
-                <span>256-Bit SSL</span>
-              </div>
-            </div>
+          <!-- Left: In-Page Fast Giving Engine with Glowing Gradient Border -->
+          <div class="lg:col-span-7 relative">
+            <div class="donation-ambient-halo" aria-hidden="true"></div>
+            <div class="donation-glow-wrapper">
+              <div class="bg-white p-6 sm:p-8 rounded-[1.65rem]">
+                <div class="flex items-center justify-between pb-4 mb-4 border-b border-border-subtle">
+                  <div>
+                    <span class="inline-flex items-center gap-1.5 text-xs uppercase font-extrabold tracking-wider text-primary">
+                      <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                      Direct Fast Giving
+                    </span>
+                    <h3 class="text-xl sm:text-2xl font-bold text-on-surface">Support a Child’s Journey</h3>
+                  </div>
+                  <div class="flex items-center gap-1.5 text-primary bg-surface-mint px-3 py-1.5 rounded-xl text-xs font-bold border border-primary/20 shadow-sm">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+                    <span class="material-symbols-outlined text-sm">lock</span>
+                    <span>256-Bit SSL</span>
+                  </div>
+                </div>
 
             <form id="donationForm" class="space-y-4">
               <!-- Select Cause -->
@@ -995,6 +1005,8 @@
               <span class="material-symbols-outlined text-3xl">celebration</span>
               <p class="font-bold text-base">धन्यवाद! Thank you for standing with our children.</p>
               <p class="text-xs">Your tax-deductible 80G receipt will be dispatched within minutes of payment processing.</p>
+            </div>
+              </div>
             </div>
           </div>
 
