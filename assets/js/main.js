@@ -805,9 +805,8 @@ window.addEventListener('keydown', (e) => {
    ========================================================================== */
 (function initDynamicLighting() {
   if (typeof window === 'undefined') return;
-  const hasPointer = window.matchMedia('(pointer: fine)').matches;
-  if (!hasPointer) return;
 
+  // 1. Ensure Spotlight Overlay
   let lightEl = document.getElementById('dynamic-cursor-light');
   if (!lightEl) {
     lightEl = document.createElement('div');
@@ -816,20 +815,66 @@ window.addEventListener('keydown', (e) => {
     document.body.appendChild(lightEl);
   }
 
-  let raf = null;
+  // 2. Create Glowing Cursor Orb
+  let orbEl = document.getElementById('dynamic-cursor-orb');
+  if (!orbEl) {
+    orbEl = document.createElement('div');
+    orbEl.id = 'dynamic-cursor-orb';
+    orbEl.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(orbEl);
+  }
+
+  // 3. Create Dynamic Light Status Badge
+  let badgeEl = document.getElementById('dynamic-light-badge');
+  if (!badgeEl) {
+    badgeEl = document.createElement('div');
+    badgeEl.id = 'dynamic-light-badge';
+    badgeEl.className = 'fixed bottom-4 left-4 z-40 hidden sm:flex items-center gap-2 bg-[#005134]/90 backdrop-blur-md text-white px-3 py-1.5 rounded-full border border-[#b7d9a7]/40 shadow-xl text-xs font-semibold select-none pointer-events-none';
+    badgeEl.innerHTML = '<span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span><span class="text-[#b7d9a7] font-bold">Dynamic Light</span><span class="text-white/60">|</span><span class="text-[11px] text-white/80">Active</span>';
+    document.body.appendChild(badgeEl);
+  }
+
+  let targetX = -200, targetY = -200;
+  let currX = -200, currY = -200;
+  let isMoving = false;
+
   window.addEventListener('pointermove', function(e) {
-    if (raf) cancelAnimationFrame(raf);
-    raf = requestAnimationFrame(function() {
+    targetX = e.clientX;
+    targetY = e.clientY;
+    if (!isMoving) {
+      isMoving = true;
       lightEl.style.opacity = '1';
-      document.documentElement.style.setProperty('--cursor-x', e.clientX + 'px');
-      document.documentElement.style.setProperty('--cursor-y', e.clientY + 'px');
-    });
+      orbEl.style.opacity = '0.85';
+    }
+
+    document.documentElement.style.setProperty('--cursor-x', e.clientX + 'px');
+    document.documentElement.style.setProperty('--cursor-y', e.clientY + 'px');
+
+    const target = e.target;
+    if (target && target.closest && target.closest('button, a, .glass-card, article')) {
+      orbEl.classList.add('cursor-hover-interactive');
+    } else {
+      orbEl.classList.remove('cursor-hover-interactive');
+    }
   }, { passive: true });
 
+  function renderTrail() {
+    currX += (targetX - currX) * 0.15;
+    currY += (targetY - currY) * 0.15;
+    orbEl.style.left = currX + 'px';
+    orbEl.style.top = currY + 'px';
+    requestAnimationFrame(renderTrail);
+  }
+  requestAnimationFrame(renderTrail);
+
   document.addEventListener('mouseleave', function() {
-    if (lightEl) lightEl.style.opacity = '0';
+    lightEl.style.opacity = '0';
+    orbEl.style.opacity = '0';
+    isMoving = false;
   });
   document.addEventListener('mouseenter', function() {
-    if (lightEl) lightEl.style.opacity = '1';
+    lightEl.style.opacity = '1';
+    orbEl.style.opacity = '0.85';
+    isMoving = true;
   });
 })();
