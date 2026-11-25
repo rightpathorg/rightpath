@@ -15,11 +15,23 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/rightpath_logo.png">
 
-  <!-- Google Fonts & Material Symbols -->
+  <!-- Preconnect & DNS Prefetch to Critical CDNs -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://lh3.googleusercontent.com">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://lh3.googleusercontent.com">
+
+  <!-- Preload Critical Logo & Custom CSS -->
+  <link rel="preload" href="assets/images/rightpath_logo.png" as="image" fetchpriority="high">
+  <link rel="preload" href="assets/css/styles.css?v=2.2" as="style">
+
+  <!-- Google Fonts & Material Symbols (Optimized weights with display=swap) -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0..1,0&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -68,7 +80,7 @@
   </script>
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="assets/css/styles.css?v=2.1">
+  <link rel="stylesheet" href="assets/css/styles.css?v=2.2">
 </head>
 
 <body class="bg-surface font-sans text-on-surface antialiased selection:bg-accent-sprout selection:text-primary relative min-h-screen">
@@ -89,7 +101,7 @@
       <!-- Brand Identity with Glowing Halo -->
       <a href="#" class="flex items-center gap-3 group focus:outline-none">
         <div class="relative w-11 h-11 rounded-full p-[2px] bg-gradient-to-tr from-primary via-[#80b98e] to-accent-sprout shadow-sm group-hover:scale-105 group-hover:shadow-[0_0_16px_rgba(183,217,167,0.7)] transition-all duration-300">
-          <img src="assets/images/rightpath_logo.png" alt="RightPath Logo" class="w-full h-full object-cover rounded-full bg-white">
+          <img src="assets/images/rightpath_logo.png" alt="RightPath Logo" width="44" height="44" fetchpriority="high" decoding="async" class="w-full h-full object-cover rounded-full bg-white">
           <span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center">
             <span class="w-1.5 h-1.5 rounded-full bg-white animate-ping"></span>
           </span>
@@ -157,7 +169,7 @@
     <div>
       <div class="flex items-center justify-between pb-4 border-b border-border-subtle">
         <div class="flex items-center gap-2">
-          <img src="assets/images/rightpath_logo.png" alt="RightPath Logo" class="w-8 h-8 rounded-full">
+          <img src="assets/images/rightpath_logo.png" alt="RightPath Logo" width="32" height="32" decoding="async" class="w-8 h-8 rounded-full">
           <span class="font-bold text-primary text-base">RightPath NGO</span>
         </div>
         <button id="closeMobileMenu" class="p-1 rounded-full text-text-muted hover:text-primary">
@@ -264,7 +276,7 @@
               <div class="flex flex-col items-center flex-shrink-0 group cursor-pointer transition-all hover:scale-105">
                 <div class="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-[#005134] via-[#80b98e] to-[#b7d9a7] flex items-center justify-center shadow-sm">
                   <div class="w-full h-full rounded-full overflow-hidden border-2 border-white bg-surface-mint">
-                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2NnH-OTYih1JSAsgDFOd8oXJjr2Lsq8V3ZmJRMXpUX38tBsN4-68MG6pPmE_OoRhyNGHPcF-9AIF08iIEtlYV8WW3cRqxaIQtH2TIhN7cSA43RGuKL1tysE_UsjTJdwaWa1rzjz0XnRnUagIRJKkWMVWwmd_0rgw5v8RDSMfKWjbql_j_xmUThaf4bCyJQ-ZsRSheQ-c9UTSETcJ1lnKXLBp0HwjCkg_w7uClxiU" alt="Aarav Sharma" class="w-full h-full object-cover">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2NnH-OTYih1JSAsgDFOd8oXJjr2Lsq8V3ZmJRMXpUX38tBsN4-68MG6pPmE_OoRhyNGHPcF-9AIF08iIEtlYV8WW3cRqxaIQtH2TIhN7cSA43RGuKL1tysE_UsjTJdwaWa1rzjz0XnRnUagIRJKkWMVWwmd_0rgw5v8RDSMfKWjbql_j_xmUThaf4bCyJQ-ZsRSheQ-c9UTSETcJ1lnKXLBp0HwjCkg_w7uClxiU" alt="Aarav Sharma" width="48" height="48" loading="lazy" decoding="async" class="w-full h-full object-cover">
                   </div>
                   <span class="absolute -bottom-1 bg-primary text-white font-bold text-[9px] px-1.5 py-0.2 rounded-full ring-2 ring-white shadow-sm">₹2,100</span>
                 </div>
@@ -276,7 +288,7 @@
               <div class="flex flex-col items-center flex-shrink-0 group cursor-pointer transition-all hover:scale-105">
                 <div class="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-[#005134] via-[#80b98e] to-[#b7d9a7] flex items-center justify-center shadow-sm">
                   <div class="w-full h-full rounded-full overflow-hidden border-2 border-white bg-surface-mint">
-                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcnucTpy09VSCm-0vHxJ8tjj2d8Dgm1GyHMiZSBtXA7LSSrw_zI-w93sn8fw8VEH-2f4AklTAg7-Y3EoW8Imn_bOPhc4dFMv75q3cz7vOjeeLo1gJg3PDnXIOzK1GUxQrZtZBjZCybVNAO940K-i1kx9ZOAgjEQEuUHwCsd1zk8_hVXT4lkXliW-YDU36OySuPveTtN9xBTegfk9bGZ7KS2qPRfZ77gLpRtoct4lY" alt="Priya Mehta" class="w-full h-full object-cover">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcnucTpy09VSCm-0vHxJ8tjj2d8Dgm1GyHMiZSBtXA7LSSrw_zI-w93sn8fw8VEH-2f4AklTAg7-Y3EoW8Imn_bOPhc4dFMv75q3cz7vOjeeLo1gJg3PDnXIOzK1GUxQrZtZBjZCybVNAO940K-i1kx9ZOAgjEQEuUHwCsd1zk8_hVXT4lkXliW-YDU36OySuPveTtN9xBTegfk9bGZ7KS2qPRfZ77gLpRtoct4lY" alt="Priya Mehta" width="48" height="48" loading="lazy" decoding="async" class="w-full h-full object-cover">
                   </div>
                   <span class="absolute -bottom-1 bg-primary text-white font-bold text-[9px] px-1.5 py-0.2 rounded-full ring-2 ring-white shadow-sm">₹5,000</span>
                 </div>
@@ -300,7 +312,7 @@
               <div class="flex flex-col items-center flex-shrink-0 group cursor-pointer transition-all hover:scale-105">
                 <div class="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-[#005134] via-[#b7d9a7] to-[#f59e0b] flex items-center justify-center shadow-sm">
                   <div class="w-full h-full rounded-full overflow-hidden border-2 border-white bg-surface-mint">
-                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoi9xx1Qy7pK9RFCB26Wg4y8y4siEq4OYg_unxfGglaBIzBFY3gHyCIoQLGIDw7GbeoUPQmlDjrkfKqQXBG8zlW3KIZcVnZk5fIEr_4rag8r7HXX9VQnuVxH0ZWeGMkvdcS7sNADtylwBG9aU4Ga32xom3bqyB11dMQvbgyZmpegB505SaJblKNgzq5Ty_KclSNSNUYhvq85akxh0UP-oUUuzOT4OvLgyJWrE8n3g" alt="Kavita Singhal" class="w-full h-full object-cover">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoi9xx1Qy7pK9RFCB26Wg4y8y4siEq4OYg_unxfGglaBIzBFY3gHyCIoQLGIDw7GbeoUPQmlDjrkfKqQXBG8zlW3KIZcVnZk5fIEr_4rag8r7HXX9VQnuVxH0ZWeGMkvdcS7sNADtylwBG9aU4Ga32xom3bqyB11dMQvbgyZmpegB505SaJblKNgzq5Ty_KclSNSNUYhvq85akxh0UP-oUUuzOT4OvLgyJWrE8n3g" alt="Kavita Singhal" width="48" height="48" loading="lazy" decoding="async" class="w-full h-full object-cover">
                   </div>
                   <span class="absolute -bottom-1 bg-[#005134] text-[#b7d9a7] font-bold text-[9px] px-1.5 py-0.2 rounded-full ring-2 ring-white shadow-sm">₹10,000</span>
                 </div>
@@ -324,7 +336,7 @@
               <div class="flex flex-col items-center flex-shrink-0 group cursor-pointer transition-all hover:scale-105">
                 <div class="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-[#005134] via-[#80b98e] to-[#b7d9a7] flex items-center justify-center shadow-sm">
                   <div class="w-full h-full rounded-full overflow-hidden border-2 border-white bg-surface-mint">
-                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5AfSNN1cNK_EeJvUU5HBDgPGtKSlOjgKAe7X_Dpfo0yOmoFkuFjYPZ7oi8AkRRjvpM5aG5ImiGptmsiURyuybkJPIIh7P_k-hjLNMEW0m0sa_yQVLt4b3CeVGswRDmHXtcAXnPbViWRdwcKBJ2aXTrF0Kuktak5HRy8HptpUusljuhqtyvBBR2J9e-zOT_M2YhAkCSZcWyF2zFrUdQpKZwflabG7tT1n6ZhIIO_k" alt="Sneha Gupta" class="w-full h-full object-cover">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5AfSNN1cNK_EeJvUU5HBDgPGtKSlOjgKAe7X_Dpfo0yOmoFkuFjYPZ7oi8AkRRjvpM5aG5ImiGptmsiURyuybkJPIIh7P_k-hjLNMEW0m0sa_yQVLt4b3CeVGswRDmHXtcAXnPbViWRdwcKBJ2aXTrF0Kuktak5HRy8HptpUusljuhqtyvBBR2J9e-zOT_M2YhAkCSZcWyF2zFrUdQpKZwflabG7tT1n6ZhIIO_k" alt="Sneha Gupta" width="48" height="48" loading="lazy" decoding="async" class="w-full h-full object-cover">
                   </div>
                   <span class="absolute -bottom-1 bg-primary text-white font-bold text-[9px] px-1.5 py-0.2 rounded-full ring-2 ring-white shadow-sm">₹1,500</span>
                 </div>
@@ -339,7 +351,7 @@
               <div class="flex flex-col items-center flex-shrink-0 group cursor-pointer transition-all hover:scale-105">
                 <div class="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-[#005134] via-[#80b98e] to-[#b7d9a7] flex items-center justify-center shadow-sm">
                   <div class="w-full h-full rounded-full overflow-hidden border-2 border-white bg-surface-mint">
-                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2NnH-OTYih1JSAsgDFOd8oXJjr2Lsq8V3ZmJRMXpUX38tBsN4-68MG6pPmE_OoRhyNGHPcF-9AIF08iIEtlYV8WW3cRqxaIQtH2TIhN7cSA43RGuKL1tysE_UsjTJdwaWa1rzjz0XnRnUagIRJKkWMVWwmd_0rgw5v8RDSMfKWjbql_j_xmUThaf4bCyJQ-ZsRSheQ-c9UTSETcJ1lnKXLBp0HwjCkg_w7uClxiU" alt="Aarav Sharma" class="w-full h-full object-cover">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2NnH-OTYih1JSAsgDFOd8oXJjr2Lsq8V3ZmJRMXpUX38tBsN4-68MG6pPmE_OoRhyNGHPcF-9AIF08iIEtlYV8WW3cRqxaIQtH2TIhN7cSA43RGuKL1tysE_UsjTJdwaWa1rzjz0XnRnUagIRJKkWMVWwmd_0rgw5v8RDSMfKWjbql_j_xmUThaf4bCyJQ-ZsRSheQ-c9UTSETcJ1lnKXLBp0HwjCkg_w7uClxiU" alt="Aarav Sharma" width="48" height="48" loading="lazy" decoding="async" class="w-full h-full object-cover">
                   </div>
                   <span class="absolute -bottom-1 bg-primary text-white font-bold text-[9px] px-1.5 py-0.2 rounded-full ring-2 ring-white shadow-sm">₹2,100</span>
                 </div>
@@ -351,7 +363,7 @@
               <div class="flex flex-col items-center flex-shrink-0 group cursor-pointer transition-all hover:scale-105">
                 <div class="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-[#005134] via-[#80b98e] to-[#b7d9a7] flex items-center justify-center shadow-sm">
                   <div class="w-full h-full rounded-full overflow-hidden border-2 border-white bg-surface-mint">
-                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcnucTpy09VSCm-0vHxJ8tjj2d8Dgm1GyHMiZSBtXA7LSSrw_zI-w93sn8fw8VEH-2f4AklTAg7-Y3EoW8Imn_bOPhc4dFMv75q3cz7vOjeeLo1gJg3PDnXIOzK1GUxQrZtZBjZCybVNAO940K-i1kx9ZOAgjEQEuUHwCsd1zk8_hVXT4lkXliW-YDU36OySuPveTtN9xBTegfk9bGZ7KS2qPRfZ77gLpRtoct4lY" alt="Priya Mehta" class="w-full h-full object-cover">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcnucTpy09VSCm-0vHxJ8tjj2d8Dgm1GyHMiZSBtXA7LSSrw_zI-w93sn8fw8VEH-2f4AklTAg7-Y3EoW8Imn_bOPhc4dFMv75q3cz7vOjeeLo1gJg3PDnXIOzK1GUxQrZtZBjZCybVNAO940K-i1kx9ZOAgjEQEuUHwCsd1zk8_hVXT4lkXliW-YDU36OySuPveTtN9xBTegfk9bGZ7KS2qPRfZ77gLpRtoct4lY" alt="Priya Mehta" width="48" height="48" loading="lazy" decoding="async" class="w-full h-full object-cover">
                   </div>
                   <span class="absolute -bottom-1 bg-primary text-white font-bold text-[9px] px-1.5 py-0.2 rounded-full ring-2 ring-white shadow-sm">₹5,000</span>
                 </div>
@@ -375,7 +387,7 @@
               <div class="flex flex-col items-center flex-shrink-0 group cursor-pointer transition-all hover:scale-105">
                 <div class="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-[#005134] via-[#b7d9a7] to-[#f59e0b] flex items-center justify-center shadow-sm">
                   <div class="w-full h-full rounded-full overflow-hidden border-2 border-white bg-surface-mint">
-                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoi9xx1Qy7pK9RFCB26Wg4y8y4siEq4OYg_unxfGglaBIzBFY3gHyCIoQLGIDw7GbeoUPQmlDjrkfKqQXBG8zlW3KIZcVnZk5fIEr_4rag8r7HXX9VQnuVxH0ZWeGMkvdcS7sNADtylwBG9aU4Ga32xom3bqyB11dMQvbgyZmpegB505SaJblKNgzq5Ty_KclSNSNUYhvq85akxh0UP-oUUuzOT4OvLgyJWrE8n3g" alt="Kavita Singhal" class="w-full h-full object-cover">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoi9xx1Qy7pK9RFCB26Wg4y8y4siEq4OYg_unxfGglaBIzBFY3gHyCIoQLGIDw7GbeoUPQmlDjrkfKqQXBG8zlW3KIZcVnZk5fIEr_4rag8r7HXX9VQnuVxH0ZWeGMkvdcS7sNADtylwBG9aU4Ga32xom3bqyB11dMQvbgyZmpegB505SaJblKNgzq5Ty_KclSNSNUYhvq85akxh0UP-oUUuzOT4OvLgyJWrE8n3g" alt="Kavita Singhal" width="48" height="48" loading="lazy" decoding="async" class="w-full h-full object-cover">
                   </div>
                   <span class="absolute -bottom-1 bg-[#005134] text-[#b7d9a7] font-bold text-[9px] px-1.5 py-0.2 rounded-full ring-2 ring-white shadow-sm">₹10,000</span>
                 </div>
@@ -399,7 +411,7 @@
               <div class="flex flex-col items-center flex-shrink-0 group cursor-pointer transition-all hover:scale-105">
                 <div class="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-[#005134] via-[#80b98e] to-[#b7d9a7] flex items-center justify-center shadow-sm">
                   <div class="w-full h-full rounded-full overflow-hidden border-2 border-white bg-surface-mint">
-                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5AfSNN1cNK_EeJvUU5HBDgPGtKSlOjgKAe7X_Dpfo0yOmoFkuFjYPZ7oi8AkRRjvpM5aG5ImiGptmsiURyuybkJPIIh7P_k-hjLNMEW0m0sa_yQVLt4b3CeVGswRDmHXtcAXnPbViWRdwcKBJ2aXTrF0Kuktak5HRy8HptpUusljuhqtyvBBR2J9e-zOT_M2YhAkCSZcWyF2zFrUdQpKZwflabG7tT1n6ZhIIO_k" alt="Sneha Gupta" class="w-full h-full object-cover">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5AfSNN1cNK_EeJvUU5HBDgPGtKSlOjgKAe7X_Dpfo0yOmoFkuFjYPZ7oi8AkRRjvpM5aG5ImiGptmsiURyuybkJPIIh7P_k-hjLNMEW0m0sa_yQVLt4b3CeVGswRDmHXtcAXnPbViWRdwcKBJ2aXTrF0Kuktak5HRy8HptpUusljuhqtyvBBR2J9e-zOT_M2YhAkCSZcWyF2zFrUdQpKZwflabG7tT1n6ZhIIO_k" alt="Sneha Gupta" width="48" height="48" loading="lazy" decoding="async" class="w-full h-full object-cover">
                   </div>
                   <span class="absolute -bottom-1 bg-primary text-white font-bold text-[9px] px-1.5 py-0.2 rounded-full ring-2 ring-white shadow-sm">₹1,500</span>
                 </div>
@@ -542,7 +554,7 @@
               <div id="heroTiltCard" class="tilt-card relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 bg-surface-variant aspect-[4/5] w-full group">
                 
                 <!-- Spotlight Photo -->
-                <img id="heroSpotlightImage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnmUnBsy4LK2JxTMZ_btgjtCcMGSO_nLDFZDcJZzX0REVJG5I08M82PDpXL_wv3bxHhT_V4xbJOlCkIUxFM8_hDlhSV45IgP0fEFBqrD47vUo7DL0lNGjTnCQK1l_6ECCJMbEAm8JZXvCLHT5P5Fm5PDKjbvntrz90I8rlaZ9Gpejj5e2aeQPj_90n92eYeR68CSCxDOUP-vBbf5y503AYkiL3NShHPulQ0FuiLaM" alt="RightPath Classroom in Action" class="w-full h-full object-cover transition-opacity duration-300">
+                <img id="heroSpotlightImage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnmUnBsy4LK2JxTMZ_btgjtCcMGSO_nLDFZDcJZzX0REVJG5I08M82PDpXL_wv3bxHhT_V4xbJOlCkIUxFM8_hDlhSV45IgP0fEFBqrD47vUo7DL0lNGjTnCQK1l_6ECCJMbEAm8JZXvCLHT5P5Fm5PDKjbvntrz90I8rlaZ9Gpejj5e2aeQPj_90n92eYeR68CSCxDOUP-vBbf5y503AYkiL3NShHPulQ0FuiLaM" alt="RightPath Classroom in Action" width="600" height="750" fetchpriority="high" decoding="async" class="w-full h-full object-cover transition-opacity duration-300">
                 
                 <!-- Gradient Overlay -->
                 <div class="absolute inset-0 bg-gradient-to-t from-[#0e2c21] via-black/20 to-transparent"></div>
@@ -616,7 +628,7 @@
           <article data-category="education" class="initiative-card bg-white rounded-2xl border border-border-subtle overflow-hidden flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
             <div>
               <div class="relative h-48 bg-surface-mint overflow-hidden">
-                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6y6wrEUvUzycGNHRGWgrGzx956jVNJhocB0Sh23L85wX_NnoGKxYl96dqgRZLfsZZ-BeOB5SxawqiojgnszMq_yrKv8UpcipaEusk2sYTBMUw6Jtz4LtlZQ5rYr3X99K5Ju0jmGP0iX3uSL2ZpheGq-R9OKfhUEwj9nmowdmwuRvaEQkn6gDNCxpOVYEhmtQE9NsGLO3q3SstMQI22pHpfxDslxwq_BW_5Pq-lAM" alt="Shiksha Abhiyan Street Classrooms" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6y6wrEUvUzycGNHRGWgrGzx956jVNJhocB0Sh23L85wX_NnoGKxYl96dqgRZLfsZZ-BeOB5SxawqiojgnszMq_yrKv8UpcipaEusk2sYTBMUw6Jtz4LtlZQ5rYr3X99K5Ju0jmGP0iX3uSL2ZpheGq-R9OKfhUEwj9nmowdmwuRvaEQkn6gDNCxpOVYEhmtQE9NsGLO3q3SstMQI22pHpfxDslxwq_BW_5Pq-lAM" alt="Shiksha Abhiyan Street Classrooms" width="400" height="192" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-[#153f30] text-accent-sprout text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Education</span>
               </div>
               <div class="p-5 space-y-2">
@@ -647,7 +659,7 @@
           <article data-category="health-meals" class="initiative-card bg-white rounded-2xl border border-border-subtle overflow-hidden flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
             <div>
               <div class="relative h-48 bg-surface-mint overflow-hidden">
-                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXObVM1hJ_4mLledVWvVMwHMgsPnuirGwDeA-_VYb4cg85u7FEqBmkibF8vXJMQXgovucR9oRvSRZnUTHIwV41ROsuja9Z2ipWLA-Jz8Q8FgJzsR4-Sl83mOoA9xlHnACptIFusT4dhuHY43N0R-QPjAxZBgHaF9ZZaVMX_SKDNBnb-gIJ8jlBUge0_X7hII2TcDTWC1C8AcJZE48xrxws0TFBsUEcxjL_URbodUk" alt="Poshan Sahayata Mid-Day Meals" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXObVM1hJ_4mLledVWvVMwHMgsPnuirGwDeA-_VYb4cg85u7FEqBmkibF8vXJMQXgovucR9oRvSRZnUTHIwV41ROsuja9Z2ipWLA-Jz8Q8FgJzsR4-Sl83mOoA9xlHnACptIFusT4dhuHY43N0R-QPjAxZBgHaF9ZZaVMX_SKDNBnb-gIJ8jlBUge0_X7hII2TcDTWC1C8AcJZE48xrxws0TFBsUEcxjL_URbodUk" alt="Poshan Sahayata Mid-Day Meals" width="400" height="192" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-[#153f30] text-accent-sprout text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Nutrition</span>
               </div>
               <div class="p-5 space-y-2">
@@ -678,7 +690,7 @@
           <article data-category="health-meals" class="initiative-card bg-white rounded-2xl border border-border-subtle overflow-hidden flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
             <div>
               <div class="relative h-48 bg-surface-mint overflow-hidden">
-                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAODBNY1hNK-ngOgs12vdD_Uta5mtvuQr07pgMB7S1EXtOSBr_NheCgo_fN7WV8D89XN7vzXyaLmVoLIztgDPmM5Gr7INeNVJSuGoy5ybU98JtWfnvQPUAagtvqC4y23nLuYAkv37CyrfAwDkOBogCM6-H-IEe_St_L0oo9u6zjFimW18fRukI5NTWPxIZLdkMpo0yLCYIQn_YEaG6gwLoCnwCoTBrvqZEv1GnkGQE" alt="Arogya Seva Medical Camps" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAODBNY1hNK-ngOgs12vdD_Uta5mtvuQr07pgMB7S1EXtOSBr_NheCgo_fN7WV8D89XN7vzXyaLmVoLIztgDPmM5Gr7INeNVJSuGoy5ybU98JtWfnvQPUAagtvqC4y23nLuYAkv37CyrfAwDkOBogCM6-H-IEe_St_L0oo9u6zjFimW18fRukI5NTWPxIZLdkMpo0yLCYIQn_YEaG6gwLoCnwCoTBrvqZEv1GnkGQE" alt="Arogya Seva Medical Camps" width="400" height="192" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-[#153f30] text-accent-sprout text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Healthcare</span>
               </div>
               <div class="p-5 space-y-2">
@@ -709,7 +721,7 @@
           <article data-category="livelihoods" class="initiative-card bg-white rounded-2xl border border-border-subtle overflow-hidden flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
             <div>
               <div class="relative h-48 bg-surface-mint overflow-hidden">
-                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrWLMz2kRyTIqpM4RPgAWKY6xnWuxaUuGr37btzyjO7rX1mPZxpwfPsS5T9qo8VUDIxRbgDqGRZDeAZjwAH2imEBYpbNRwsNjnVbqTBbHBNfih7ngohyjirHVn-PnJHnjCujQTfBZwgf3I9FoogZb5dykytiWkuwQsmiUtzJGAGBCcPfLf2HBlKrC3j0RPBmZ-wueiRXjzFoCf97Vo4FnbLBTTfsvvWQWN9KiCCy8" alt="Kaushal Vikas Women Empowerment" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrWLMz2kRyTIqpM4RPgAWKY6xnWuxaUuGr37btzyjO7rX1mPZxpwfPsS5T9qo8VUDIxRbgDqGRZDeAZjwAH2imEBYpbNRwsNjnVbqTBbHBNfih7ngohyjirHVn-PnJHnjCujQTfBZwgf3I9FoogZb5dykytiWkuwQsmiUtzJGAGBCcPfLf2HBlKrC3j0RPBmZ-wueiRXjzFoCf97Vo4FnbLBTTfsvvWQWN9KiCCy8" alt="Kaushal Vikas Women Empowerment" width="400" height="192" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-[#153f30] text-accent-sprout text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Livelihoods</span>
               </div>
               <div class="p-5 space-y-2">
@@ -740,7 +752,7 @@
           <article data-category="livelihoods" class="initiative-card bg-white rounded-2xl border border-border-subtle overflow-hidden flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
             <div>
               <div class="relative h-48 bg-surface-mint overflow-hidden">
-                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr6Im1Zk_n_y9kD9carjLtryUmvZPaGAhNsYRF2HZlmkV3_0_B6BsEqbCgPgdzwnkqI2Z8rHo4Na6aKwUtmy3p93hBL83ib1aW53_S-TmgvXp1sDL4SBnr0jnz1Hn_iiHzBaWghTqd9yWF5P9rTfwdNVce1qxwz_1wdvADS5wSYZ5wdOjmLIEhFBjHDhLeevKJs9yBu2IKvmvqLaa3-xqatjR4aoaRpnqxMgkzGuY" alt="Vriddha Care Senior Support" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr6Im1Zk_n_y9kD9carjLtryUmvZPaGAhNsYRF2HZlmkV3_0_B6BsEqbCgPgdzwnkqI2Z8rHo4Na6aKwUtmy3p93hBL83ib1aW53_S-TmgvXp1sDL4SBnr0jnz1Hn_iiHzBaWghTqd9yWF5P9rTfwdNVce1qxwz_1wdvADS5wSYZ5wdOjmLIEhFBjHDhLeevKJs9yBu2IKvmvqLaa3-xqatjR4aoaRpnqxMgkzGuY" alt="Vriddha Care Senior Support" width="400" height="192" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-[#153f30] text-accent-sprout text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Elder Care</span>
               </div>
               <div class="p-5 space-y-2">
@@ -771,7 +783,7 @@
           <article data-category="livelihoods" class="initiative-card bg-white rounded-2xl border border-border-subtle overflow-hidden flex flex-col justify-between hover:shadow-xl transition-all duration-300 group">
             <div>
               <div class="relative h-48 bg-surface-mint overflow-hidden">
-                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa1x5UGjmu7bv5R9-ML3R2CBMxVrWfPa5biaSLp-wzbCkBZ37D3c5VPWQvNMz2J-9paEGpcXQmknx0UWYuCukP3IvLP5sCoqiiDmhkG7og1mh2_zYHFmpDSEqOuQcyys_dkUUkl8VghbaQdl0HJhbz_jojJI4aDcHS54WMZvzrkjbT-QjScRtb5ezq3FcDsh6w8l3ArDrOtDk6ZL--ftjDe_z_4oU2aupRjxrKwEA" alt="Harit Pahal Eco Drives" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa1x5UGjmu7bv5R9-ML3R2CBMxVrWfPa5biaSLp-wzbCkBZ37D3c5VPWQvNMz2J-9paEGpcXQmknx0UWYuCukP3IvLP5sCoqiiDmhkG7og1mh2_zYHFmpDSEqOuQcyys_dkUUkl8VghbaQdl0HJhbz_jojJI4aDcHS54WMZvzrkjbT-QjScRtb5ezq3FcDsh6w8l3ArDrOtDk6ZL--ftjDe_z_4oU2aupRjxrKwEA" alt="Harit Pahal Eco Drives" width="400" height="192" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <span class="absolute top-3 left-3 bg-[#153f30] text-accent-sprout text-[11px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">Environment</span>
               </div>
               <div class="p-5 space-y-2">
@@ -863,7 +875,7 @@
           <!-- Story 1: Aarti -->
           <div class="bg-white/10 border border-white/15 p-6 rounded-2xl backdrop-blur-sm flex flex-col sm:flex-row gap-5 items-start hover:bg-white/15 transition-all">
             <div class="w-24 h-24 rounded-2xl overflow-hidden flex-shrink-0 border-2 border-accent-sprout/40 shadow-md">
-              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA53L41VmCnbxr-Ar_vCGGbX1K7KDsvf907kldNHDfTHzsdW8Fb0ps9VHs_5_E95OGzfmHlkLOuO1spl8xtrnA8P_9GlDuKQZw21qKk8MYcoI03qfrQQRg6t0goeIXSBzqLYQIl6QdmX_LXTOUNXX4S-P1Y29oYls4MMit_DoXY_BlD9qBnbYFQ7RwU6LNwddlfPi2kiol3Ik9qkF6PNE-DVY0Gdgk3t_7Uqq5DHwM" alt="Aarti Kumari" class="w-full h-full object-cover">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA53L41VmCnbxr-Ar_vCGGbX1K7KDsvf907kldNHDfTHzsdW8Fb0ps9VHs_5_E95OGzfmHlkLOuO1spl8xtrnA8P_9GlDuKQZw21qKk8MYcoI03qfrQQRg6t0goeIXSBzqLYQIl6QdmX_LXTOUNXX4S-P1Y29oYls4MMit_DoXY_BlD9qBnbYFQ7RwU6LNwddlfPi2kiol3Ik9qkF6PNE-DVY0Gdgk3t_7Uqq5DHwM" alt="Aarti Kumari" width="96" height="96" loading="lazy" decoding="async" class="w-full h-full object-cover">
             </div>
             <div class="space-y-2">
               <div class="flex items-center gap-2">
@@ -883,7 +895,7 @@
           <!-- Story 2: Sunita Devi -->
           <div class="bg-white/10 border border-white/15 p-6 rounded-2xl backdrop-blur-sm flex flex-col sm:flex-row gap-5 items-start hover:bg-white/15 transition-all">
             <div class="w-24 h-24 rounded-2xl overflow-hidden flex-shrink-0 border-2 border-accent-sprout/40 shadow-md">
-              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJtBdzAENy8GVTE3ZPWr6gnPHGdC4h27IWVIdB5269Vb5NB-leqr7uSIEkwUVOYfwoMyw9QA0emTN3L8PulxRE26jllO5JBSzTnrO581n854dOW79dG1QAGbQPCgRk1XlARp8h99QI0Pk59s42DrKigTU0snkVE6HDG87IVabKdXFiAkOWnEYMYwWs_OO0eZjBjXggmxxOwPISXDq6IexwE3ETwalk9xB424poUVE" alt="Sunita Devi" class="w-full h-full object-cover">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJtBdzAENy8GVTE3ZPWr6gnPHGdC4h27IWVIdB5269Vb5NB-leqr7uSIEkwUVOYfwoMyw9QA0emTN3L8PulxRE26jllO5JBSzTnrO581n854dOW79dG1QAGbQPCgRk1XlARp8h99QI0Pk59s42DrKigTU0snkVE6HDG87IVabKdXFiAkOWnEYMYwWs_OO0eZjBjXggmxxOwPISXDq6IexwE3ETwalk9xB424poUVE" alt="Sunita Devi" width="96" height="96" loading="lazy" decoding="async" class="w-full h-full object-cover">
             </div>
             <div class="space-y-2">
               <div class="flex items-center gap-2">
@@ -1127,7 +1139,7 @@
         <!-- Brand Info -->
         <div class="lg:col-span-4 space-y-4">
           <div class="flex items-center gap-3">
-            <img src="assets/images/rightpath_logo.png" alt="RightPath Logo" class="h-10 w-10 object-cover rounded-full bg-white ring-2 ring-accent-sprout/40">
+            <img src="assets/images/rightpath_logo.png" alt="RightPath Logo" width="40" height="40" loading="lazy" decoding="async" class="h-10 w-10 object-cover rounded-full bg-white ring-2 ring-accent-sprout/40">
             <span class="text-xl font-extrabold text-white tracking-tight">RightPathNGO</span>
           </div>
           <p class="text-xs sm:text-sm text-[#b2d5bf] leading-relaxed max-w-sm font-normal">
@@ -1381,6 +1393,10 @@
                   <img
                     src="assets/images/founder.png"
                     alt="Ashish Kumar - Founder & Chief Trustee"
+                    width="144"
+                    height="144"
+                    loading="lazy"
+                    decoding="async"
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     onerror="this.src='assets/images/rightpath_logo.png'"
                   >
@@ -1618,6 +1634,6 @@
   </div>
 
   <!-- Main JavaScript File -->
-  <script src="assets/js/main.js?v=2.1"></script>
+  <script defer src="assets/js/main.js?v=2.2"></script>
 </body>
 </html>

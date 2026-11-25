@@ -17,6 +17,7 @@ node_modules/
 .DS_Store
 *.pem
 Thumbs.db
+*_full.png
 
 # debug
 npm-debug.log*

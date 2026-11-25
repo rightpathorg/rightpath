@@ -6,7 +6,7 @@ $listener.Prefixes.Add("http://127.0.0.1:$port/")
 
 try {
     $listener.Start()
-    Write-Host "RightPath Server running at http://localhost:$port/"
+    Write-Host "RightPath High-Performance Server running at http://localhost:$port/"
 } catch {
     Write-Host "Failed to start on $port, trying 8081..."
     $port = 8081
@@ -14,7 +14,7 @@ try {
     $listener.Prefixes.Add("http://localhost:$port/")
     $listener.Prefixes.Add("http://127.0.0.1:$port/")
     $listener.Start()
-    Write-Host "RightPath Server running at http://localhost:$port/"
+    Write-Host "RightPath High-Performance Server running at http://localhost:$port/"
 }
 
 $mimeTypes = @{
@@ -34,6 +34,16 @@ $mimeTypes = @{
     ".ttf"  = "font/ttf"
 }
 
+$compressible = @(".html", ".htm", ".css", ".js", ".json", ".svg")
+
+function Compress-Gzip ([byte[]]$data) {
+    $ms = New-Object System.IO.MemoryStream
+    $gzip = New-Object System.IO.Compression.GZipStream($ms, [System.IO.Compression.CompressionMode]::Compress)
+    $gzip.Write($data, 0, $data.Length)
+    $gzip.Close()
+    return $ms.ToArray()
+}
+
 while ($listener.IsListening) {
     try {
         $context = $listener.GetContext()
@@ -51,10 +61,31 @@ while ($listener.IsListening) {
             $ext = [System.IO.Path]::GetExtension($filePath).ToLower()
             $contentType = if ($mimeTypes.ContainsKey($ext)) { $mimeTypes[$ext] } else { "application/octet-stream" }
             $response.ContentType = $contentType
+            $response.AddHeader("Access-Control-Allow-Origin", "*")
+
+            # High-performance Caching Headers
+            if ($ext -in @(".html", ".htm")) {
+                $response.AddHeader("Cache-Control", "no-cache, must-revalidate")
+            } else {
+                $response.AddHeader("Cache-Control", "public, max-age=86400, immutable")
+            }
+
             $bytes = [System.IO.File]::ReadAllBytes($filePath)
-            $response.ContentLength64 = $bytes.Length
-            $response.StatusCode = 200
-            $response.OutputStream.Write($bytes, 0, $bytes.Length)
+            $acceptEncoding = $request.Headers["Accept-Encoding"]
+
+            # On-the-fly Gzip compression for text assets
+            if ($ext -in $compressible -and $acceptEncoding -and $acceptEncoding.Contains("gzip") -and $bytes.Length -gt 256) {
+                $compressed = Compress-Gzip $bytes
+                $response.AddHeader("Content-Encoding", "gzip")
+                $response.AddHeader("Vary", "Accept-Encoding")
+                $response.ContentLength64 = $compressed.Length
+                $response.StatusCode = 200
+                $response.OutputStream.Write($compressed, 0, $compressed.Length)
+            } else {
+                $response.ContentLength64 = $bytes.Length
+                $response.StatusCode = 200
+                $response.OutputStream.Write($bytes, 0, $bytes.Length)
+            }
         } else {
             $response.StatusCode = 404
             $errBytes = [System.Text.Encoding]::UTF8.GetBytes("404 Not Found: $urlPath")

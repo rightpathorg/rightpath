@@ -36,7 +36,9 @@ function initHopeParticles() {
   const ctx = canvas.getContext('2d');
   let width, height;
   let particles = [];
-  let mouse = { x: -1000, y: -1000, radius: 140 };
+  let mouse = { x: -1000, y: -1000, radius: 120 };
+  let animId = null;
+  let isVisible = true;
 
   function resize() {
     width = canvas.width = Math.max(canvas.parentElement ? canvas.parentElement.offsetWidth : window.innerWidth, 320);
@@ -46,13 +48,14 @@ function initHopeParticles() {
 
   function createParticles() {
     particles = [];
-    const count = Math.min(Math.floor(width / 22), 65);
+    const isMobile = width < 768;
+    const count = isMobile ? 18 : 32;
     const colors = [
-      'rgba(183, 217, 167, 0.7)', // Sprout
-      'rgba(128, 185, 142, 0.65)', // Sage
-      'rgba(154, 233, 189, 0.6)',  // Emerald light
+      'rgba(183, 217, 167, 0.65)', // Sprout
+      'rgba(128, 185, 142, 0.6)',  // Sage
+      'rgba(154, 233, 189, 0.55)', // Emerald light
       'rgba(245, 158, 11, 0.5)',   // Warm amber spark
-      'rgba(255, 255, 255, 0.65)'  // White star
+      'rgba(255, 255, 255, 0.6)'   // White star
     ];
 
     for (let i = 0; i < count; i++) {
@@ -61,19 +64,21 @@ function initHopeParticles() {
         y: Math.random() * height,
         originX: Math.random() * width,
         originY: Math.random() * height,
-        radius: Math.random() * 2.8 + 1,
+        radius: Math.random() * 2.2 + 1,
         color: colors[Math.floor(Math.random() * colors.length)],
-        vx: (Math.random() - 0.5) * 0.6,
-        vy: (Math.random() - 0.5) * 0.6 - 0.2, // gentle upward drift
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5 - 0.15, // gentle upward drift
         wave: Math.random() * Math.PI * 2,
         waveSpeed: Math.random() * 0.02 + 0.01
       });
     }
   }
 
+  let resizeTimer;
   window.addEventListener('resize', () => {
-    resize();
-  });
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(resize, 150);
+  }, { passive: true });
 
   const heroSection = document.getElementById('hero-section');
   if (heroSection) {
@@ -81,24 +86,59 @@ function initHopeParticles() {
       const rect = canvas.getBoundingClientRect();
       mouse.x = e.clientX - rect.left;
       mouse.y = e.clientY - rect.top;
-    });
+    }, { passive: true });
 
     heroSection.addEventListener('mouseleave', () => {
       mouse.x = -1000;
       mouse.y = -1000;
     });
+
+    // Pause canvas animation when hero is scrolled out of viewport
+    if ('IntersectionObserver' in window) {
+      const heroObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          isVisible = entry.isIntersecting;
+          if (isVisible && !animId) {
+            animId = requestAnimationFrame(animate);
+          } else if (!isVisible && animId) {
+            cancelAnimationFrame(animId);
+            animId = null;
+          }
+        });
+      }, { threshold: 0.05 });
+      heroObserver.observe(heroSection);
+    }
   }
+
+  // Handle tab visibility change
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      if (animId) {
+        cancelAnimationFrame(animId);
+        animId = null;
+      }
+    } else if (isVisible && !animId) {
+      animId = requestAnimationFrame(animate);
+    }
+  });
 
   resize();
 
   function animate() {
+    if (!isVisible) {
+      animId = null;
+      return;
+    }
     ctx.clearRect(0, 0, width, height);
+
+    const isMobile = width < 768;
+    const maxDist = isMobile ? 55 : 80;
 
     // Draw and update particles
     for (let i = 0; i < particles.length; i++) {
       const p = particles[i];
       p.wave += p.waveSpeed;
-      p.x += p.vx + Math.cos(p.wave) * 0.35;
+      p.x += p.vx + Math.cos(p.wave) * 0.3;
       p.y += p.vy;
 
       // Wrap around bounds
@@ -113,40 +153,37 @@ function initHopeParticles() {
       const dist = Math.sqrt(dx * dx + dy * dy);
 
       if (dist < mouse.radius) {
-        const force = (1 - dist / mouse.radius) * 3;
+        const force = (1 - dist / mouse.radius) * 2.5;
         const angle = Math.atan2(dy, dx);
         p.x -= Math.cos(angle) * force;
         p.y -= Math.sin(angle) * force;
       }
 
-      // Render glowing particle
+      // Render particle (clean, high-performance alpha fill)
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
       ctx.fillStyle = p.color;
-      ctx.shadowBlur = 10;
-      ctx.shadowColor = p.color;
       ctx.fill();
-      ctx.shadowBlur = 0;
 
       // Connect nearby particles
       for (let j = i + 1; j < particles.length; j++) {
         const p2 = particles[j];
         const lineDist = Math.hypot(p.x - p2.x, p.y - p2.y);
-        if (lineDist < 85) {
+        if (lineDist < maxDist) {
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(p2.x, p2.y);
-          ctx.strokeStyle = `rgba(183, 217, 167, ${0.25 * (1 - lineDist / 85)})`;
-          ctx.lineWidth = 0.75;
+          ctx.strokeStyle = `rgba(183, 217, 167, ${0.2 * (1 - lineDist / maxDist)})`;
+          ctx.lineWidth = 0.65;
           ctx.stroke();
         }
       }
     }
 
-    requestAnimationFrame(animate);
+    animId = requestAnimationFrame(animate);
   }
 
-  animate();
+  animId = requestAnimationFrame(animate);
 }
 
 /* ==========================================================================
@@ -183,18 +220,25 @@ function initHeroTiltCard() {
 
   // Only enable on desktop/mouse devices
   if (window.matchMedia('(hover: hover)').matches) {
+    let ticking = false;
     container.addEventListener('mousemove', (e) => {
-      const rect = container.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const rect = container.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
 
-      const rotateX = ((y - centerY) / centerY) * -12; // tilt angle
-      const rotateY = ((x - centerX) / centerX) * 12;
+          const rotateX = ((y - centerY) / centerY) * -12; // tilt angle
+          const rotateY = ((x - centerX) / centerX) * 12;
 
-      card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
-    });
+          card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
 
     container.addEventListener('mouseleave', () => {
       card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
