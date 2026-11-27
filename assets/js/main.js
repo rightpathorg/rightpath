@@ -3,6 +3,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initNavbarInteractions();
   initHopeParticles();
   initRotatingHeadline();
   initHeroTiltCard();
@@ -565,6 +566,83 @@ function initInitiativeFilters() {
       });
     });
   });
+}
+
+/* ==========================================================================
+   8B. Navbar Dynamic Floating Island, Magnetic Slider & Scroll Progress
+   ========================================================================== */
+function initNavbarInteractions() {
+  const header = document.getElementById('mainHeader');
+  const scrollIndicator = document.getElementById('navScrollIndicator');
+  const navTray = document.getElementById('desktopNavTray');
+  const glidingPill = document.getElementById('navGlidingPill');
+  const navButtons = navTray ? navTray.querySelectorAll('.nav-pill-btn') : [];
+
+  // 1. Scroll Progress Bar & Island Elevation
+  function updateScroll() {
+    const scrollY = window.scrollY || window.pageYOffset;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercent = docHeight > 0 ? Math.min(Math.max((scrollY / docHeight) * 100, 0), 100) : 0;
+
+    if (scrollIndicator) {
+      scrollIndicator.style.width = `${scrollPercent}%`;
+    }
+
+    if (header) {
+      if (scrollY > 30) {
+        header.classList.add('is-scrolled');
+      } else {
+        header.classList.remove('is-scrolled');
+      }
+    }
+  }
+
+  window.addEventListener('scroll', updateScroll, { passive: true });
+  updateScroll();
+
+  // 2. Magnetic Gliding Pill Indicator
+  if (navTray && glidingPill && navButtons.length) {
+    let currentActive = navTray.querySelector('.nav-pill-btn.active') || navButtons[0];
+
+    function positionPill(targetBtn, show = true) {
+      if (!targetBtn) return;
+      const trayRect = navTray.getBoundingClientRect();
+      const btnRect = targetBtn.getBoundingClientRect();
+
+      const left = btnRect.left - trayRect.left;
+      const width = btnRect.width;
+
+      glidingPill.style.left = `${left}px`;
+      glidingPill.style.width = `${width}px`;
+      glidingPill.style.opacity = show ? '1' : '0';
+    }
+
+    // Initialize pill position
+    setTimeout(() => {
+      positionPill(currentActive, true);
+    }, 120);
+
+    navButtons.forEach((btn) => {
+      btn.addEventListener('mouseenter', () => {
+        positionPill(btn, true);
+      });
+
+      btn.addEventListener('click', () => {
+        navButtons.forEach(b => b.classList.remove('active', 'font-bold'));
+        btn.classList.add('active', 'font-bold');
+        currentActive = btn;
+        positionPill(btn, true);
+      });
+    });
+
+    navTray.addEventListener('mouseleave', () => {
+      positionPill(currentActive, true);
+    });
+
+    window.addEventListener('resize', () => {
+      positionPill(currentActive, true);
+    }, { passive: true });
+  }
 }
 
 /* ==========================================================================

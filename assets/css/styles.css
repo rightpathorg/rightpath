@@ -22,29 +22,188 @@
   --text-muted: #64746b;
 }
 
-/* Cool Island Navigation Bar Styling */
+/* ==========================================================================
+   Cool Island Navigation Bar & Header Animations
+   ========================================================================== */
+
+/* Header Island Capsule */
 .navbar-island {
+  position: relative;
   background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  box-shadow: 0 10px 30px -5px rgba(0, 81, 52, 0.08), 0 0 1px 1px rgba(0, 81, 52, 0.05);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 12px 35px -5px rgba(0, 81, 52, 0.1), 0 0 25px rgba(183, 217, 167, 0.15);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+/* Scrolled state: slightly more compact and elevated */
+header.is-scrolled .navbar-island {
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 16px 45px -8px rgba(0, 81, 52, 0.18), 0 0 1px 1px rgba(0, 81, 52, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Scroll Progress Bar at the base of island */
+#navScrollIndicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, #10b981 0%, #b7d9a7 50%, #f59e0b 100%);
+  border-radius: 9999px;
+  width: 0%;
+  transition: width 0.12s ease-out;
+  z-index: 20;
+}
+
+/* Avatar Animated Rotating Conical / Story Ring */
+.nav-avatar-ring {
+  position: relative;
+  padding: 2.5px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #10b981, #b7d9a7, #f59e0b, #005134, #10b981);
+  background-size: 300% 300%;
+  animation: navRingRotate 5s linear infinite;
+  box-shadow: 0 0 14px rgba(183, 217, 167, 0.5);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.nav-avatar-ring:hover {
+  transform: scale(1.08) rotate(3deg);
+  box-shadow: 0 0 22px rgba(183, 217, 167, 0.85);
+}
+
+@keyframes navRingRotate {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Desktop Nav Gliding Pill Track */
+.nav-pill-tray {
+  position: relative;
+}
+
+.nav-gliding-pill {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  border-radius: 9999px;
+  background: #eaf4eb;
+  border: 1px solid rgba(0, 81, 52, 0.12);
+  box-shadow: 0 2px 8px rgba(0, 81, 52, 0.06);
+  transition: all 0.28s cubic-bezier(0.25, 1, 0.5, 1);
+  pointer-events: none;
+  z-index: 1;
 }
 
 .nav-pill-btn {
   position: relative;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-pill-btn:hover {
-  background: rgba(234, 244, 235, 0.85);
   color: #005134;
+  transform: translateY(-1px);
 }
 
 .nav-pill-btn.active {
-  background: #eaf4eb;
   color: #005134;
   font-weight: 700;
+}
+
+/* Nav Link Icon micro-wobble */
+.nav-pill-btn:hover .nav-icon-wobble {
+  animation: iconWobble 0.5s ease-in-out;
+}
+
+@keyframes iconWobble {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg) scale(1.15); }
+  75% { transform: rotate(10deg) scale(1.15); }
+}
+
+/* Animated WhatsApp Pill Button */
+.nav-whatsapp-btn {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: navWaPulse 3.5s infinite ease-in-out;
+}
+
+.nav-whatsapp-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  background-color: rgba(37, 211, 102, 0.22);
+  border-color: rgba(37, 211, 102, 0.55);
+}
+
+.nav-whatsapp-btn:hover svg {
+  animation: waWiggle 0.6s ease-in-out;
+}
+
+@keyframes navWaPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.35), 0 2px 8px rgba(37, 211, 102, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(37, 211, 102, 0), 0 4px 16px rgba(37, 211, 102, 0.3);
+  }
+}
+
+@keyframes waWiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-14deg) scale(1.15); }
+  75% { transform: rotate(14deg) scale(1.15); }
+}
+
+/* Supercharged Donate Now Pill Button */
+.nav-donate-btn {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #005134 0%, #155a3d 50%, #005134 100%);
+  box-shadow: 0 4px 20px rgba(0, 81, 52, 0.3), 0 0 15px rgba(183, 217, 167, 0.25);
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.nav-donate-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 100%
+  );
+  transform: rotate(25deg);
+  animation: navBtnSheen 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes navBtnSheen {
+  0% { left: -100%; }
+  35%, 100% { left: 200%; }
+}
+
+.nav-donate-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 30px rgba(0, 81, 52, 0.45), 0 0 25px rgba(183, 217, 167, 0.5);
+}
+
+/* Brand Text Shimmer on Hover */
+.nav-brand-title {
+  transition: all 0.3s ease;
+}
+
+.nav-brand-title:hover {
+  background: linear-gradient(135deg, #005134 0%, #10b981 50%, #005134 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Shimmer Button Effect */
