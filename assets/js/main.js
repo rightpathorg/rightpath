@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initRotatingHeadline();
   initHeroTiltCard();
   initHeroVisualSwitcher();
+  initHeroLiveBeacon();
   initHeroGivingPills();
   initAnimatedCounters();
   initImpactCalculator();
@@ -211,11 +212,12 @@ function initRotatingHeadline() {
 }
 
 /* ==========================================================================
-   3. Hero 3D Parallax Tilt Card
+   3. Hero 3D Parallax Tilt Card & Cursor Glare
    ========================================================================== */
 function initHeroTiltCard() {
   const container = document.getElementById('heroTiltContainer');
   const card = document.getElementById('heroTiltCard');
+  const glare = document.getElementById('heroCardGlare');
   if (!container || !card) return;
 
   // Only enable on desktop/mouse devices
@@ -230,10 +232,16 @@ function initHeroTiltCard() {
           const centerX = rect.width / 2;
           const centerY = rect.height / 2;
 
-          const rotateX = ((y - centerY) / centerY) * -12; // tilt angle
-          const rotateY = ((x - centerX) / centerX) * 12;
+          const rotateX = ((y - centerY) / centerY) * -10; // tilt angle
+          const rotateY = ((x - centerX) / centerX) * 10;
 
           card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+
+          if (glare) {
+            glare.style.opacity = '1';
+            glare.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.05) 50%, transparent 75%)`;
+          }
+
           ticking = false;
         });
         ticking = true;
@@ -242,12 +250,15 @@ function initHeroTiltCard() {
 
     container.addEventListener('mouseleave', () => {
       card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      if (glare) {
+        glare.style.opacity = '0';
+      }
     });
   }
 }
 
 /* ==========================================================================
-   4. Hero Visual Spotlight Switcher (4 Focus Areas)
+   4. Hero Visual Spotlight Switcher (4 Focus Areas with Story Progress)
    ========================================================================== */
 const heroSpotlights = [
   {
@@ -292,25 +303,46 @@ function initHeroVisualSwitcher() {
 
   let currentIndex = 0;
   let autoplayTimer;
+  const AUTOPLAY_MS = 5500;
 
   function switchSpotlight(index) {
     currentIndex = index;
     const data = heroSpotlights[index];
 
-    // Update tab active classes
+    // Update tab active classes & story progress bar
     tabs.forEach((tab, i) => {
+      const progressBar = tab.querySelector('.hero-tab-progress-bar');
       if (i === index) {
-        tab.className = 'hero-tab-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-accent-sprout text-primary shadow-sm transition-all flex items-center gap-1.5';
+        tab.classList.remove('text-[#b2d5bf]', 'hover:text-white', 'hover:bg-white/10', 'font-semibold');
+        tab.classList.add('bg-accent-sprout', 'text-primary', 'font-bold', 'shadow-sm');
+
+        if (progressBar) {
+          progressBar.style.transition = 'none';
+          progressBar.style.width = '0%';
+          void progressBar.offsetWidth; // Force reflow
+          progressBar.style.transition = `width ${AUTOPLAY_MS - 200}ms linear`;
+          progressBar.style.width = '100%';
+        }
       } else {
-        tab.className = 'hero-tab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-[#b2d5bf] hover:text-white hover:bg-white/10 transition-all flex items-center gap-1.5';
+        tab.classList.remove('bg-accent-sprout', 'text-primary', 'font-bold', 'shadow-sm');
+        tab.classList.add('text-[#b2d5bf]', 'hover:text-white', 'hover:bg-white/10', 'font-semibold');
+
+        if (progressBar) {
+          progressBar.style.transition = 'none';
+          progressBar.style.width = '0%';
+        }
       }
     });
 
-    // Animate image fade
-    imgEl.style.opacity = '0.3';
+    // Animate image fade and restart Ken-Burns zoom
+    imgEl.style.opacity = '0.25';
     setTimeout(() => {
       imgEl.src = data.img;
       imgEl.style.opacity = '1';
+      // Restart ken burns animation
+      imgEl.classList.remove('hero-ken-burns');
+      void imgEl.offsetWidth; // Force reflow
+      imgEl.classList.add('hero-ken-burns');
     }, 180);
 
     if (titleEl) titleEl.innerText = data.title;
@@ -329,13 +361,50 @@ function initHeroVisualSwitcher() {
   });
 
   function startAutoplay() {
+    clearInterval(autoplayTimer);
     autoplayTimer = setInterval(() => {
       const nextIndex = (currentIndex + 1) % heroSpotlights.length;
       switchSpotlight(nextIndex);
-    }, 5500);
+    }, AUTOPLAY_MS);
   }
 
+  // Initial trigger to start first progress bar
+  switchSpotlight(0);
   startAutoplay();
+}
+
+/* ==========================================================================
+   4B. Hero Floating Live Activity Beacon Rotator
+   ========================================================================== */
+function initHeroLiveBeacon() {
+  const badge = document.getElementById('heroLiveActivityBadge');
+  const nameEl = document.getElementById('heroLiveDonorName');
+  const detailEl = document.getElementById('heroLiveDonorDetail');
+  if (!badge || !nameEl || !detailEl) return;
+
+  const activities = [
+    { name: 'Pooja from Rohini', detail: 'Sponsored 10 Meals (₹1,200) • 2m ago' },
+    { name: 'Dr. Vivek Sharma', detail: 'Funded Free Health Camp (₹3,500) • 5m ago' },
+    { name: 'Ananya S. from Noida', detail: 'Sponsored 1 Child School Kit (₹500) • 8m ago' },
+    { name: 'Kavita & Rajesh G.', detail: 'Enrolled 2 Women in Tailoring (₹6,000) • 12m ago' },
+    { name: 'Amit Verma (Gurugram)', detail: 'Monthly Sustaining Supporter (₹2,500) • 16m ago' },
+    { name: 'Ritu Kapoor (Delhi)', detail: 'Provided Mid-day Nutrition (₹1,200) • 19m ago' }
+  ];
+
+  let current = 0;
+  setInterval(() => {
+    current = (current + 1) % activities.length;
+    badge.style.transition = 'opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+    badge.style.opacity = '0';
+    badge.style.transform = 'translateY(8px)';
+
+    setTimeout(() => {
+      nameEl.innerText = activities[current].name;
+      detailEl.innerText = activities[current].detail;
+      badge.style.opacity = '1';
+      badge.style.transform = 'translateY(0)';
+    }, 400);
+  }, 5000);
 }
 
 /* ==========================================================================
@@ -354,15 +423,21 @@ function initHeroGivingPills() {
     pill.addEventListener('click', (e) => {
       e.preventDefault();
       pills.forEach((p) => {
-        p.classList.remove('bg-accent-sprout', 'text-primary', 'font-bold', 'ring-2', 'ring-white');
-        p.classList.add('bg-white/10', 'text-[#d3e7da]');
+        p.classList.remove('active-pill', 'bg-accent-sprout', 'text-primary', 'font-extrabold', 'shadow-[0_0_20px_rgba(183,217,167,0.4)]', 'border-white/30');
+        p.classList.add('bg-white/10', 'text-[#d3e7da]', 'font-semibold', 'border-white/10');
       });
 
-      pill.classList.remove('bg-white/10', 'text-[#d3e7da]');
-      pill.classList.add('bg-accent-sprout', 'text-primary', 'font-bold', 'ring-2', 'ring-white');
+      pill.classList.remove('bg-white/10', 'text-[#d3e7da]', 'font-semibold', 'border-white/10');
+      pill.classList.add('active-pill', 'bg-accent-sprout', 'text-primary', 'font-extrabold', 'shadow-[0_0_20px_rgba(183,217,167,0.4)]', 'border-white/30');
 
       selectedAmt = parseInt(pill.getAttribute('data-amount') || '1200');
       const impactLabel = pill.getAttribute('data-impact') || 'Direct Child Care';
+
+      // Micro-bounce effect on Donate Button
+      ctaBtn.style.transform = 'scale(0.96)';
+      setTimeout(() => {
+        ctaBtn.style.transform = '';
+      }, 150);
 
       if (ctaText) {
         ctaText.innerText = `Donate ₹${selectedAmt.toLocaleString('en-IN')} (${impactLabel})`;
