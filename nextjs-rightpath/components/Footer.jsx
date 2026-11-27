@@ -49,7 +49,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <span className="material-symbols-outlined text-sm text-accent-sprout">call</span>
-                <span>+91 97117 18972</span>
+                <span>+91 83779 88556</span>
               </li>
             </ul>
           </div>

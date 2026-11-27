@@ -62,7 +62,7 @@ export default function Navbar({ onOpenDonation, onOpenAboutUs }) {
           {/* Header CTAs */}
           <div className="flex items-center gap-2 sm:gap-3">
             <a
-              href="https://wa.me/919711718972?text=Hi%20RightPath%20NGO,%20I%20would%20like%20to%20connect"
+              href="https://wa.me/918377988556?text=Hi%20RightPath%20NGO,%20I%20would%20like%20to%20connect"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center gap-1.5 text-xs font-bold text-[#156f34] bg-[#25D366]/15 hover:bg-[#25D366]/25 border border-[#25D366]/30 px-3.5 py-2 rounded-full transition-all duration-300 hover:scale-105 shadow-sm"
@@ -145,7 +145,7 @@ export default function Navbar({ onOpenDonation, onOpenAboutUs }) {
             <span>Donate Now (80G Proof)</span>
           </button>
           <a
-            href="https://wa.me/919711718972"
+            href="https://wa.me/918377988556"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full py-2.5 bg-[#25D366]/20 text-[#1e7e34] rounded-xl font-bold text-xs flex items-center justify-center gap-2"

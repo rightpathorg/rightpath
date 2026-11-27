@@ -94,7 +94,7 @@ export default function AboutUs({ onOpenModal }) {
 
                 {/* WhatsApp Direct */}
                 <a
-                  href="https://wa.me/919711718972?text=Hi%20Ashish%20ji,%20I%20would%20like%20to%20connect%20regarding%20RightPathNGO"
+                  href="https://wa.me/918377988556?text=Hi%20Ashish%20ji,%20I%20would%20like%20to%20connect%20regarding%20RightPathNGO"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="WhatsApp"
