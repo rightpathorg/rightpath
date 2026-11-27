@@ -64,11 +64,7 @@ while ($listener.IsListening) {
             $response.AddHeader("Access-Control-Allow-Origin", "*")
 
             # High-performance Caching Headers
-            if ($ext -in @(".html", ".htm")) {
-                $response.AddHeader("Cache-Control", "no-cache, must-revalidate")
-            } else {
-                $response.AddHeader("Cache-Control", "public, max-age=86400, immutable")
-            }
+            $response.AddHeader("Cache-Control", "no-cache, must-revalidate")
 
             $bytes = [System.IO.File]::ReadAllBytes($filePath)
             $acceptEncoding = $request.Headers["Accept-Encoding"]
